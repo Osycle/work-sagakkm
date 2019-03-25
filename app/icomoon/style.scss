@@ -1,0 +1,94 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?q2l6av');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?q2l6av#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?q2l6av') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?q2l6av') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?q2l6av##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icm-"], [class*=" icm-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icm-black-envelope {
+  &:before {
+    content: $icm-black-envelope; 
+  }
+}
+.icm-check {
+  &:before {
+    content: $icm-check; 
+  }
+}
+.icm-circles {
+  &:before {
+    content: $icm-circles; 
+  }
+}
+.icm-connect {
+  &:before {
+    content: $icm-connect; 
+  }
+}
+.icm-design {
+  &:before {
+    content: $icm-design; 
+  }
+}
+.icm-ecology {
+  &:before {
+    content: $icm-ecology; 
+  }
+}
+.icm-facebook {
+  &:before {
+    content: $icm-facebook; 
+  }
+}
+.icm-location {
+  &:before {
+    content: $icm-location; 
+  }
+}
+.icm-phone-call-home {
+  &:before {
+    content: $icm-phone-call-home; 
+  }
+}
+.icm-phone-receiver-contacts {
+  &:before {
+    content: $icm-phone-receiver-contacts; 
+  }
+}
+.icm-search {
+  &:before {
+    content: $icm-search; 
+  }
+}
+.icm-snowflake {
+  &:before {
+    content: $icm-snowflake; 
+  }
+}
+.icm-telegram {
+  &:before {
+    content: $icm-telegram; 
+  }
+}
+

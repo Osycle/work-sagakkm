@@ -1,0 +1,98 @@
+/* 
+		_footer.scss
+*/
+
+/*
+										---FOOTER---
+*/
+
+
+
+#footer{
+	position: relative;
+	//color: rgba(black, 0.4);
+	//min-height: 150px;
+	line-height: 170%;
+	background-repeat: repeat;
+	background-position-y: top;
+	//background-size: cover;
+	background-color: white;
+	//background-image: url('../img/bg/bg-footer.jpg');
+	&:before{
+		font-size: 150px;
+		position: absolute;
+		top: 0 ;
+	}
+	h1{
+		border-left: 0;
+	}
+	color: white;
+}
+.footer-content{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background-color: #6d1815;
+	.wrapper{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	@media (max-width: 991px) {
+		.wrapper{
+			flex-direction: column;
+		}
+	}
+}
+
+
+.footer-logo{
+	.img-content, img{
+		width: 302px;
+	}
+}
+.footer-socicons{
+	font-size: 25px;
+	li{
+		display: inline-block;
+		transition: all 0.3s ease;
+		text-align: center;
+		margin-left: 5px;
+		color: white;
+		font-size: 15px;
+		&:nth-child(1){
+			margin-left: 0;
+		}
+		a{
+			display: flex;
+			height: 100%;
+			align-items: center;
+			i{
+				width: 100%;
+			}
+		}
+		&:hover{
+			color: $color-3;
+		}
+	}
+	.fa-paper-plane{
+		font-size: 16px;
+		transform: translate(-1px, 0);
+	}
+	.fa-instagram{
+		//font-size: 20px;
+	}
+	.fa-facebook{
+		//font-size: 20px;
+	}
+}
+
+
+
+.copy-content{
+	background-color: $color-2;
+	color: white;
+}
+.dev{
+	font-size: 0.9em;
+}
+
