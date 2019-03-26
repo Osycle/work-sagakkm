@@ -143,7 +143,10 @@ figcaption{
 	position: relative;
 	background-size: cover;
 	background-position: center center;
-	background-image: url('../img/slider/slide-1.jpg');
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-family: $font-family-1;
+
 	figure{
 		overflow: hidden;
 		height: $slider-height;
@@ -179,7 +182,7 @@ figcaption{
 		transition: 1s ease;
 	}
 	h1{
-		text-transform: uppercase;
+		font-family: em(36, 14);
 		transform: matrix(1,0,0,1,0,-7);
 	}
 	p{
@@ -215,10 +218,22 @@ figcaption{
 	.flickity-slider{
 		transform: inherit !important;
 	}
+	&:hover{
+		.container-arrows{
+			width: 95%;
+			opacity: 0.5;
+		}
+	}
 	.container-arrows{
     @extend .container;
     @extend .trans-center;
+    width: 115%;
+    opacity: 0;
+    transition: all 0.3s ease;
     z-index: 1;
+    .flickity-prev-next-button{
+    	height: 100px;
+    }
 	}
 	.carousel-content{
 		position: relative;
@@ -230,11 +245,7 @@ figcaption{
 				height: 90vh;
 			}
 		}
-		@media (min-width: 992px) {
-			.align-i-center{
-				padding-top: 190px;
-			}
-		}
+
 		
 	}
 	.bg-shadow{
@@ -260,10 +271,10 @@ figcaption{
 	@media (min-width: 992px) {
 		//Стрелки
 		.flickity-prev-next-button.previous{
-			left: -15px;
+			left: 0x;
 		}
 		.flickity-prev-next-button.next{
-			right: -15px;
+			right: 0;
 		}
 	}
 	@media (max-width: 991px) {
@@ -303,5 +314,175 @@ figcaption{
 
 
 
-
+.search-nav-content{
+  position: relative;
+  form{
+    .search-input{
+      width: 200px;
+      height: 36px;
+      margin-left: auto;
+    }
+  }
+  input{
+    border: 1px solid $color-2;
+    border-radius: 5px;
+    background-color: rgba(white, 0.3);
+    height: 100%;
+    width: 100%;
+    padding: 0 15px;
+  }
+  button{   
+    color: white;
+    padding: 5px 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    border: 0;
+    background-color: transparent;
+  }
+}
 //content
+
+.text-shadow-1{
+	text-shadow: 0 2px 1px $color-3;
+}
+//short-services
+.short-services-items{
+	.img{
+		height: 150px;
+		background-position: center;
+		background-size: contain;
+	}
+	figure{
+		position: relative;
+		&:before{
+			@extend .clafclear;
+			height: 100%;
+			width: 1px;
+			right: -15px;
+			background: linear-gradient(to bottom, transparent, $color-gray-2 50%, transparent);
+		}
+		&:nth-last-child(1){
+			&:before{
+				display: none;
+			}
+		}
+	}
+}
+.borderstyle-1{
+	border-top: 1px solid #40c4c8;
+	border-image: url(../img/other/hr.png) 1 repeat repeat;
+}
+//short-articles
+.short-articles-items{	
+	@extend .borderstyle-1;
+	.img{
+		height: 425px;
+		background-position: center;
+		background-size: cover;
+		filter: contrast(100%);
+		transition: all 1s ease;
+	}
+	.img-content{
+		position: relative;
+		overflow: hidden;
+	}
+	.desc-content{
+		padding: 10px 15px;
+		display: flex;
+		align-items: flex-end;
+		color: white;
+	}
+	h2,h3,h4{
+		margin: 0;
+		font-family: $font-family-3;
+	}
+	.cap-content{
+		border: 2px solid white;
+		border-radius: 15px;
+		padding: 5px 30px;
+	}
+	figure{
+		position: relative;
+		&:hover{
+			.img{
+				filter: contrast(115%);
+				transform: scale(1.1) rotate(4deg);
+			}
+		}
+	}
+}
+
+//short-specialoffer
+.short-specialoffer-items{
+	.img-content{
+		position: relative;
+		overflow: hidden;
+		perspective-origin: 0 50%;
+		perspective: 1500px;
+	}
+	.img{
+		background-position: center;
+		background-size: contain;
+		height: 200px;
+		transition: all 0.5s ease-in-out;
+		transform-origin: center;
+		&:not(.second){
+			transform: scale(1);
+		}
+		&.second{
+			width: 100%;
+			top: 0;
+			left: 0;
+			transform: scale(0);
+			position: absolute;
+			opacity: 0.5;
+		}
+	}
+	figure, .boxes-cell{
+		border: 1px solid $color-1;
+		font-size: em(18, 14);
+		box-shadow: 0 0 5px rgba(black, 0.5);
+		&:hover{
+			.img{
+				&:not(.second){
+					transform: scale(0);
+					opacity: 0;
+				}
+				&.second{
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+		}
+	}
+	@media (min-width: 992px) {
+		.cell-hover{
+			background-color: transparent;
+			top: -10px;
+			.btn-def{
+				color: white;
+				box-shadow: none;
+				&, &:hover{
+					background-color: rgba($color-1, 0.8);
+				}
+				a{
+					text-shadow: none;
+				}
+			}
+		}
+	}
+}
+.btn-inbasket{
+	background-color: $color-1;
+	color: white;
+	@extend .text-shadow-1;	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 48px;
+	a{
+
+	}
+}

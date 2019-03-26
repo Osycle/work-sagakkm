@@ -7,7 +7,7 @@
 										 ---HEADER---
 */
 
-$header-top-height: 45px; 
+$header-top-height: 50px; 
 $header-middle-height: 105px; 
 $header-bottom-height: 50px;
 $header-min-menu: 70px;
@@ -20,6 +20,7 @@ $header-min-menu: 70px;
 	pointer-events: none;
 	background-color: transparent;
 	color: white;
+	position: relative;
 	//font-family: $font-family-1;
 	*{
 		pointer-events: auto;
@@ -62,6 +63,7 @@ $header-min-menu: 70px;
 .header-top-content{
 	background-color: $color-1;
 	height: $header-top-height;
+	border-bottom: 5px solid $color-3;
 	//overflow: hidden;
 	&.align-i-center{
 		flex-wrap: nowrap;
@@ -161,11 +163,45 @@ $header-min-menu: 70px;
 		color: $color-1;
 	}
 	big{
-		font-weight: 700;
-		font-size: 2em;
+		font-size: 1.8em;
+		font-weight: 300;
 	}
 }
 
+.minibasket-content{
+	.minibasket-icon{
+		font-size: 25px;
+		color: $color-3;
+	}
+	.minibasket-cnt-content{
+		position: relative;
+		display: inline-block;
+		vertical-align: baseline;
+	}
+	.minibasket-cnt{
+		box-shadow: 0 2px 5px -1px black ;
+		color: white;
+		background-color: $color-2;
+		width: 17px;
+		height: 17px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: inline-block;
+		border-radius: 50%;
+		text-align: center;
+		font-size: 12px;
+	}
+	.minibasket-text{
+		border-bottom: 1px dashed white;
+		text-shadow: 0 0 2px $color-3;
+		padding-bottom: 2px;
+		transform: translateY(-2px);
+		display: inline-block;
+		margin-right: 10px;
+		vertical-align: middle;
+	}
+}
 
 
 .menu{
@@ -222,6 +258,9 @@ $header-min-menu: 70px;
 					//visibility: visible;
 					&, li, a{
 						pointer-events: auto !important;
+					}
+					li{
+						transition: auto;
 					}
 					transition: 
 											opacity 0.3s ease-in-out,
@@ -647,7 +686,7 @@ input.feedback-control{
 
 .feedback-btn{
 	border: 1px solid $color-2;
-	background-color: $color-3;
+	background-color: #1b8cb3;
 	border-radius: 15px;
 	text-transform: uppercase;
 	display: inline-block;
@@ -656,5 +695,8 @@ input.feedback-control{
 	a{
 		padding: 8px 15px;
 		display: inline-block;
+	}
+	.fa{
+		font-size: 16px;
 	}
 }

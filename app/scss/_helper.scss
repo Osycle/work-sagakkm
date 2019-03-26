@@ -210,6 +210,7 @@ html{
 .flex-content, .flex-adaptive, .flex-def{
 	display: flex;
 }
+
 .flex-content{
 	display: flex;
 	flex-direction: row;
@@ -233,7 +234,9 @@ html{
 		display: inline-block;
 	}
 	flex: 1 1;
-	flex-wrap: wrap;
+	&:not(.flex-nowrap){
+		flex-wrap: wrap;
+	}
 }
 .align-end, .align-center{
 	display: flex;

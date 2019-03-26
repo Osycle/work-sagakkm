@@ -6,20 +6,20 @@
 
 $color-1: #0196C0 !default;
 $color-2: #1BB0D1 !default;//
-$color-3: #1B8CB4 !default;
+$color-3: #1e6790 !default;
 $color-4: #e00579 !default;
 $color-5: #65a328 !default;
 $color-special-1: #2e1c11;
 
-$font-family-1: "Myriad Pro";
-$font-family-2: "Playfair Display";
-$font-family-3: "sans-serif";
+$font-family-1: "Helvetica Neue","Helvetica",sans-serif;
+$font-family-2: "Myriad Pro";
+$font-family-3: "Tahoma";
 
 $color-scroll: $color-1;
 $color-footer: #0071BC;
 
 $color-gray-1: #ededed; //#bdbdbd
-$color-gray-2: #d8d8d8;
+$color-gray-2: #d5d1d2;
 $color-gray-3: #343434;
 
 
@@ -486,6 +486,9 @@ table {
 		opacity: 0;
 		transition: all 0.3s ease-in-out;
 		padding: 0 5%;
+		&.hover{
+			opacity: 1 !important;
+		}
 		&>div{
 			width: 100%;
 		}
@@ -549,7 +552,7 @@ table {
 	text-align: center;	
 	text-transform: uppercase;
 	font-weight: 600;
-	//border-radius: 5px;
+	border-radius: 5px;
 	overflow: hidden;
 	font-family: $font-family-1;
 	&.text-wrap{
@@ -592,17 +595,19 @@ table {
 .btn-def, .btn-icon{
 	@extend .btn-style;
 	transition: all 0.2s ease;
+	box-shadow: 0 2px 2px $color-3;
 	*{
 		color: inherit;
 	}
 	&:not([class*="color-"]):not([class*="bg-color"]){
-		color: white;
+		color: $color-3;
 	}
 	&:not([class*="bg-color"]){
-		background-color: $color-2;
+		background-color: white;
 	}	
 	&:not(.changecolor-none):hover{
 		background-color: $color-1;
+		color: white;
 	}
 	&.radius{
 		border-radius: 20px;
@@ -624,7 +629,7 @@ table {
 	
 	background-color: transparent;
 	border: 1px solid currentColor;
-	color: $color-1;
+	color: $color-3;
 	transition: all 0.3s ease-in-out;
 	a{
 		transition: none !important;
@@ -770,7 +775,7 @@ body{
 	overflow-x: hidden;
 	//color: white;
 	//height: auto;
-	background-color: white;
+	background-color: #f4f4f4;
 	//background-image: url('../img/bg/bg-body-article.jpg');
 	background-repeat: repeat-y;
 	background-position: center 0;
@@ -901,26 +906,25 @@ thined{
 h1,h2,h3,h4,h5{
 	color: inherit;
 	line-height: 140%;
-	font-family: $font-family-1;
+	//font-family: $font-family-2;
 }
 
 h1, h2, h3, h4{
 	margin-top: 10px;
 	margin-bottom: 10px;
-	font-weight: 600;
+	font-weight: 700;
 	position: relative;	
 }
 h1{
 	font-size: em(32, 15);
 	margin-bottom: 15px;
-	font-weight: 800;
-	text-transform: uppercase;
+	font-weight: 600;
 	@media (max-width: 991px) {
 		font-size: em(20, 15);
 	}
 }
 h2{
-	font-size: em(25, 15);
+	font-size: em(24, 15);
 	margin-bottom: 15px;
 	font-weight: 700;
 	@media (max-width: 430px) {
@@ -936,7 +940,7 @@ h3{
 }
 h4{
 	font-weight: 700;
-	font-size: em(17, 15);
+	font-size: em(18, 15);
 }
 h5{	
 	line-height: 150%;
@@ -981,6 +985,7 @@ blockquote{
 }
 #page{
 	box-shadow:  0 0  15px -2px black;
+	background-color: white;
 }
 main{
 	//overflow: hidden;
