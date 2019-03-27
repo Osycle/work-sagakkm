@@ -44,7 +44,6 @@
 			//items: 3,
 			dots: !checkSm(),
 			dotsEach: true,
-			touchDrag: false,
 			autoplay: true,
 			touchDrag: true,
 			responsive:{
@@ -128,7 +127,7 @@
 				//tint: true,
 				tintColour: '#000',
 				tintOpacity: 0.5,
-				zoomType        : "inner",//lens //inner
+				zoomType: "inner",//lens //inner
 				//lensShape : "round",
 				//lensSize    : 200,
 				imageCrossfade: false,
@@ -138,39 +137,6 @@
 
 
 		/*FLIKITY*/
-		function flickityPrevNext(className, classPrevNext) {
-			var carouselWrapper = $(className);
-			for (var i = 0; i < carouselWrapper.length; i++) {
-				var crs = $(carouselWrapper[i]);
-				var carousel = crs.find(".carousel-items");
-				var carouselPrevNext = $(classPrevNext).length ? $(classPrevNext) : crs.find(".carousel-prev-next");
-				var btnNext = carouselPrevNext.find(".next");
-				var btnPrev = carouselPrevNext.find(".prev");
-				var flkty = carousel.data("flickity");
-				var selected;
-				var that = this;
-				btnNext.on("click", carousel, function(e) {
-					e.data.flickity("next", true);
-				});
-
-				btnPrev.on("click", carousel, function(e) {
-					e.data.flickity("previous", true);
-				});
-			}
-			return carousel;
-		}
-		function flickityCounter( carouselСounterСontent, counterElements ){
-			try{
-				counterElements =         $(counterElements);
-				carouselСounterСontent =  $(carouselСounterСontent);
-				var currentIndex = counterElements.siblings(".is-selected").index()+1;
-				var total = counterElements.length;
-				carouselСounterСontent.find(".carousel-counter-total").text( total );
-				carouselСounterСontent.find(".carousel-counter-current").text( currentIndex );
-			}catch(e){
-				console.error(e);
-			}
-		}
 		
 		$('.button-carousel-nav').on('click', 'li', function() {
 			var that = $(this);
@@ -179,9 +145,7 @@
 			that.siblings().removeClass("is-selected");
 		});
 
-
-
-
+		//arrow
 		var arrowStyle = "M 198.608,246.104 382.664,62.04 c 5.068,-5.056 7.856,-11.816 7.856,-19.024 0,-7.212 -2.788,-13.968 -7.856,-19.032 L 366.536,7.864 C 361.476,2.792 354.712,0 347.504,0 340.296,0 333.54,2.792 328.476,7.864 L 109.328,227.008 c -5.084,5.08 -7.868,11.868 -7.848,19.084 -0.02,7.248 2.76,14.028 7.848,19.112 l 218.944,218.932 c 5.064,5.072 11.82,7.864 19.032,7.864 7.208,0 13.964,-2.792 19.032,-7.864 l 16.124,-16.12 c 10.492,-10.492 10.492,-27.572 0,-38.06 z";
 
 		/*bnr-carousel*/
@@ -204,8 +168,6 @@
 				cellAlign: "center"
 			});
 			bnrCarousel.data("flickity");
-			//arrows
-			//flickityPrevNext(".bnr-carousel");
 			//dots
 			for( var i = 0; i < $(bnrCarousel).find("figure").length; i++){
 				bnrCarousel.siblings().find(".button-carousel-nav ul").append('<li role="button" class="button"></li>');
@@ -450,8 +412,15 @@
 		preLoader.preImg();
 
 
-
-
+		//finstorage-time
+		$("[data-change-active]").on("change", function(){
+			var activeClass =  "is-selected"
+			var attrValue = $(this).attr("data-change-active")
+			var arrClass = attrValue.split("|");
+			$( $(arrClass[0]).children().removeClass(activeClass) )
+			$(arrClass[1]).addClass(activeClass);
+			console.log($(arrClass[1]));
+		})
 
 
 
@@ -486,15 +455,6 @@ if( isEdge ){
 
 // COMMON FUNCTION
 
-setTimeout(function() {
-	//jQuery FUNCITON
-	$.fn.onResized = function() {
-		onResized(function() {
-			this;
-		});
-		return this;
-	};
-}, 10);
 
 
 
@@ -503,9 +463,6 @@ function checkSm() {
 	return $(document).width() <= 991;
 }
 
-function checkMd() {
-	return $(document).width() < 1199 && !checkSm();
-}
 
 function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;

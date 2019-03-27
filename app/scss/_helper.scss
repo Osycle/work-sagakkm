@@ -139,14 +139,18 @@ html{
 			margin-right: 5*$i+px;
 		}
 	}
-}
-@for $i from 0 through 4 {
 	.parag-m-v-#{5*$i} { 
 		p{
 			margin-top: 5*$i+px;
 			margin-bottom: 5*$i+px;
 		}
 	}
+	.parag-m-b-#{5*$i} { 
+		p{
+			margin-bottom: 5*$i+px;
+		}
+	}
+
 }
 
 
@@ -162,17 +166,24 @@ html{
 			margin-bottom: 5*$i+px;
 		}
 	}
-}
-@for $i from 0 through 12 {
+	.figure-m-b-#{5*$i} { 
+		figure, .boxes-cell{
+			margin-bottom: 5*$i+px;
+		}
+	}
+	.figure-m-t-#{5*$i} { 
+		figure, .boxes-cell{
+			margin-bottom: 5*$i+px;
+		}
+	}
 	.figure-m-h-#{5*$i} { 
-	figure, .boxes-cell{
+		figure, .boxes-cell{
 			margin-left: 5*$i+px;
 			margin-right: 5*$i+px;
 		}
-	 	
 	}
-}
 
+}
 
 
 

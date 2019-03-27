@@ -62,7 +62,7 @@
 
 
 figcaption{
-	font-weight: 600;
+	color: $color-3;
 	margin-top: 10px;
 	font-size: em(14, 15);
 	line-height: 135%;
@@ -436,6 +436,11 @@ figcaption{
 		perspective-origin: 0 50%;
 		perspective: 1500px;
 	}
+	.btn-def{
+		a{
+			font-weight: normal;
+		}
+	}
 	.img{
 		background-position: center;
 		background-size: contain;
@@ -523,6 +528,7 @@ figcaption{
     display: inline-block;
     position: absolute;
     top: 0;
+    z-index: -1;
     width: 257px;
     bottom: 0;
     background-color: #f8f8f8;
@@ -608,8 +614,8 @@ figcaption{
 	}
 	.carousel-cell {
 	  height: 80px;
-	  width: 100px;
-	  margin: 0 0 11px 0;
+	  width: 90px;
+	  margin: auto auto 11px auto;
 	  cursor: pointer;
 	}
 	$color-scroll: rgba($color-scroll, 0.5);
@@ -684,10 +690,17 @@ figcaption{
 	}
 }
 
-.finstorage-price{
+.finstorage-prices{
 	font-size: 30px;
+	.price{
+		display: none;
+		color: $color-3;
+		&.is-selected{
+			display: block;
+		}
+	}
 }
-.finstorage-types{
+.finstorage-time{
 	label{
 		display: inline-block;
 		padding: 10px 15px;
@@ -730,3 +743,48 @@ figcaption{
 
 
 
+//services
+.services-items{
+	figure{
+		padding-left: 15px;
+		padding-right: 15px;
+		&:hover{
+			.img{
+				transform: translateY(-5px);
+			}
+		}
+	}
+	.img-content{
+		border-bottom: 5px solid $color-1;
+		padding: 10px 50px 10px 50px;
+	}
+	.img{
+		transition: all 0.3s ease;
+		height: 165px;		
+		background-size: contain;
+		background-position: center;
+	}
+
+}
+
+
+//supports
+.input-content{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+.supports-form{
+	background-color: $color-gray-1;
+	border-top: 5px solid $color-1;
+	textarea{
+		min-height: 264px;
+	}
+	.input-content{
+		input, textarea{
+			&:focus{
+				border-color: $color-2;
+			}
+		}
+	}
+}

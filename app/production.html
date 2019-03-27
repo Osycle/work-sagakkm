@@ -100,7 +100,8 @@
 								<nav>
 									<ul>
 										<li><a href="index.html" title=>Главная</a></li>
-										<li><a href="about.html" title=>О компании</a>
+										<li><a href="about.html" title=>О компании</a></li>
+										<li><a href="productions.html" title=>Товары</a>
 											<ul class="sub-menu-1">
 												<li><a href="">Автономные кассы </a></li>
 												<li><a href="">POS-периферия</a></li>
@@ -111,7 +112,6 @@
 												<li><a href="">РАСПРОДАЖА</a></li>
 											</ul>
 										</li>
-										<li><a href="production.html" title=>Товары</a></li>
 										<li><a href="services.html" title=>Услуги</a></li>
 										<li><a href="supports.html" title=>Поддержка</a></li>
 										<li><a href="clients.html" title=>Клиенты</a></li>
@@ -184,7 +184,7 @@
 					    <li><a href="productions.html">Автономные кассы</a></li>
 					    <li class="active">AQSI 5-Ф</li>
 					  </ol>
-					  <div class="hr-linear"><div class="container"><div class="row"><hr></div></div></div>
+					  <div class="hr-linear"><div class="row"><hr></div></div>
 				  </div>
 				</div>
 				<div class="container p-v-30">
@@ -264,24 +264,25 @@
 									<div class="production-conts col-md-6 m-v-15 p-h-15">
 										<div class="finstorage text-right-md">
 											<form action="">				
-												<div class="finstorage-types p-b-30 m-v-15">
+												<div class="finstorage-time p-b-30 m-v-15">
 													<div class="radio-content">
-														<input type="radio" name="finstorage-types" value="" class="hide va-middle inline-block p-r-5" id="finstorage_types_1">
+														<input type="radio" name="finstorage-time" class="hide va-middle-inline p-r-5" checked id="finstorage_types_1" data-change-active=".finstorage-prices|.finstorage-price-1"">
 														<label for="finstorage_types_1" role="button">
 															<span class="va-middle radio-style-1"></span>
 															<span class="m-l-10 va-middle"><big>ФН 15 мес.</big></span>
 														</label>
 													</div>
 													<div class="radio-content">
-														<input type="radio" name="finstorage-types" value="" class="hide va-middle inline-block p-r-5" id="finstorage_types_2">
+														<input type="radio" name="finstorage-time"  class="hide va-middle-inline p-r-5" id="finstorage_types_2" data-change-active=".finstorage-prices|.finstorage-price-2">
 														<label for="finstorage_types_2" role="button">
 															<span class="va-middle radio-style-1"></span>
 															<span class="m-l-10 va-middle"><big>ФН 36 мес.</big></span>
 														</label>
 													</div>
 												</div>
-												<div class="finstorage-price m-v-15">
-													<span>20500р.</span>
+												<div class="finstorage-prices m-v-15">
+													<span class="price finstorage-price-1 is-selected">20500р.</span>
+													<span class="price finstorage-price-2">41000р.</span>
 												</div>
 												<div class="btn-def reverse color-white m-v-15">
 													<button type="submit" class="p-h-60">купить</button>
@@ -478,7 +479,7 @@
 				<div class="container clearfix">
 					<div class="row">
 						<div class="copyright col-md-6 p-v-10 p-h-15">
-							<p>© <time id="copydate">2018</time>. <span>OOO "Rockshell" Все права защищены</span></p>
+							<p>© <time id="copydate">2018</time>. <span>OOO <a href="">«САГА-Сервис».</a> Все права защищены</span></p>
 							<script>copydate.innerText = new Date().getFullYear()</script>
 						</div>
 						<div class="dev col-md-6 hidden-xs p-h-15 hidden-sm text-right-md p-v-10">
