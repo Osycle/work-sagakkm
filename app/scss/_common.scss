@@ -18,9 +18,9 @@ $font-family-3: "Tahoma";
 $color-scroll: $color-1;
 $color-footer: #0071BC;
 
-$color-gray-1: #ededed; //#bdbdbd
+$color-gray-1: #f8f8f8; //#bdbdbd
 $color-gray-2: #d5d1d2;
-$color-gray-3: #343434;
+$color-gray-3: #3c3c3c;
 
 
 
@@ -201,11 +201,11 @@ html{
 	font-size: 0.9em;
 	z-index: 1;
 	position: relative;
+	color: $color-3;
 	&, a, .active{ 		
 		a:hover{
 			transform: translateY(-5px);
 			text-decoration: none;
-			
 		}
 	}
 	a{
@@ -213,13 +213,13 @@ html{
 	}
 	.active{
 		a{
-			color: white;
+			color: $color-2;
 		}
 	}
 	& > li + li:before{
-		color: white;
+		color: $color-3;
 		//font-family: FontAwesome;
-		content: "/";
+		content: " | ";
 		font-weight: normal;
 		font-size: 1em;
 		margin:0  5px;
@@ -255,37 +255,31 @@ html{
 .table-content{
 	overflow-x: auto;
 }
-.table > thead > tr > th, table > thead > tr > th, .table > thead > tr > td, table > thead > tr > td, .table > tbody > tr > th, table > tbody > tr > th, .table > tbody > tr > td, table > tbody > tr > td, .table > tfoot > tr > th, table > tfoot > tr > th, .table > tfoot > tr > td, table > tfoot > tr > td{
-	padding: 30px;
-}
 table { 
-	border-collapse: collapse;
+	overflow-x: auto;
 	width: 100%;
-	text-align: left;
 	@extend .table; 
-	a{
-		&:hover{
-			text-decoration: underline;
-		}
-	}
 	th{
-		background-color: rgba($color-gray-1, 1);
-		padding-top: 30px;
-		color: black;
+		border-right: 1px solid;
+		background-color: rgba($color-1, 1);
+		color: white;
 	}
 	td{
-		border-color: rgba($color-gray-1, 1) !important;
+		border-color: rgba($color-1, 0.2) !important;
 	}
 	tbody{
 		tr:nth-child(odd){
-			background-color: rgba($color-gray-1, 0.4);
+			background-color: rgba($color-1, 0.1);
 		}
 		tr:nth-child(even){
-			background-color: rgba($color-gray-1, 0.0);
+			//background-color: rgba($color-1, 0.1);
 		}
 	}
 
 }
+
+
+
 
 
 
@@ -761,7 +755,7 @@ table {
 
 .parag-gray{
 	p:not([class*="color"]){
-		color: #828282;//4e5860
+		color: #666;//4e5860
 	}
 }
 
@@ -779,7 +773,8 @@ body{
 	//background-image: url('../img/bg/bg-body-article.jpg');
 	background-repeat: repeat-y;
 	background-position: center 0;
-	
+  max-width: 1170px;
+  margin: 0 auto;
 }
 
 
@@ -986,6 +981,11 @@ blockquote{
 #page{
 	box-shadow:  0 0  15px -2px black;
 	background-color: white;
+	@media (min-width: 992px) {
+		.container{
+			width: 1150px;
+		}
+	}
 }
 main{
 	//overflow: hidden;
@@ -994,7 +994,7 @@ main{
 	//min-height: 300px;
 	z-index: 1;
 	color: #343434;
-	background-image: url('../img/bg/bg-terrazzo.jpg');
+	//background-image: url('../img/bg/bg-terrazzo.jpg');
 	background-position: center bottom;
 	background-repeat: no-repeat;
 	@extend .list-style-1;
@@ -1198,31 +1198,26 @@ input[type="checkbox"]:checked{
 //radio
 input[type="radio"]:checked{
 	&~.radio-style-1, &~label .radio-style-1{
-		background-color: $color-1;
+		background-color: $color-3;
+		box-shadow: inset 0 0 8px -4px black;
+		border-color: transparent;
 	}		
 }
 label{
 	font-weight: 500;
 }
 .radio-style-1{
-	width: 20px;
-	height: 20px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
 	display: inline-block;
 	//transition: all 0.05s ease;
 	background-color: transparent;
 	position: relative;
-	border: 2px solid $color-1;
+	border: 1px solid $color-3;
 	&:hover{
 		cursor: pointer;
 	}
-	// &:before{
-	// 	@extend .claf;
-	// 	@extend .trans-center;
-	// 	width: 18px;
-	// 	height: 18px;
-	// 	border-radius: 50%;
-	// 	border: 2px solid $color-1;
-	// }
 }
 
 .radio-style-2{

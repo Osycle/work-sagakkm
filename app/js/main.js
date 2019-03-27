@@ -74,24 +74,7 @@
 				easing: 'easeInOutCubic',
 				offset: 85
 			});
-		/*ELEVATEZOOM*/
-		if ( !checkSm() && $("[data-zoom-image]:not([group])").length )
-			var x = $("[data-zoom-image]:not([group])").elevateZoom({
-				scrollZoom: true,
-				zoomWindowFadeIn: 500,
-				zoomWindowFadeOut: 500,
-				lensFadeIn: 300,
-				lensFadeOut: 300,
-				//cursor: 'pointer', 
-				tint: true,
-				tintColour: '#000',
-				tintOpacity: 0.5,
-				//zoomType        : "lens",
-				//lensShape : "round",
-				//lensSize    : 200,
-				imageCrossfade: true,
-				easing: true
-			});
+
 
 
 		//MIN-MENU
@@ -130,7 +113,28 @@
 
 
 
-
+		/*ELEVATEZOOM*/
+		function createZoom(productZoom) {
+			if( checkSm() )
+				return false;
+			$('.zoomContainer').remove();
+			productZoom.elevateZoom({
+				scrollZoom: true,
+				zoomWindowFadeIn: 500,
+				zoomWindowFadeOut: 500,
+				lensFadeIn: 300,
+				lensFadeOut: 300,
+				cursor: "crosshair",
+				//tint: true,
+				tintColour: '#000',
+				tintOpacity: 0.5,
+				zoomType        : "inner",//lens //inner
+				//lensShape : "round",
+				//lensSize    : 200,
+				imageCrossfade: false,
+				easing: true
+			});
+		}
 
 
 		/*FLIKITY*/
@@ -152,16 +156,6 @@
 				btnPrev.on("click", carousel, function(e) {
 					e.data.flickity("previous", true);
 				});
-				// carousel.on("select.flickity-"+i, function() {
-				//   console.log(this);
-				//   selected = $(flkty.selectedElement);
-				//   selected
-				//     .siblings()
-				//     .addBack()
-				//     .removeClass("is-next is-prev");
-				//   selected.next().addClass("is-next");
-				//   selected.prev().addClass("is-prev");
-				// });
 			}
 			return carousel;
 		}
@@ -232,6 +226,57 @@
 		}
 		$(".bnr-carousel .carousel-items").append("<div class='container container-arrows'></div>").find(".container-arrows").append($(".bnr-carousel .carousel-items .flickity-prev-next-button"))
 		
+
+		//flickity vertical carousel
+		// external js: flickity.pkgd.js
+
+		var $carousel = $('.production-carousel').flickity({
+				imagesLoaded: true,
+				//autoPlay: 6000,
+				pauseAutoPlayOnHover: true,
+				arrowShape: "M 10,50 L 75,100 L 70,90 L 30,50  L 70,10 L 75,0 Z",
+				initialIndex: 0,
+				friction: 1,
+				selectedAttraction: 1,
+				prevNextButtons: checkSm(),
+				draggable: false,
+				wrapAround: true,
+				pageDots: false,
+				contain: false,
+				percentPosition: true,
+				cellAlign: "center"
+			});
+
+		var $carouselNav = $('.carousel-nav');
+		var $carouselNavCells = $carouselNav.find('.carousel-cell');
+		function changeZoomImg (){
+			var zoomImg = $(".production-carousel .carousel-cell.is-selected img") || null;
+			if ( zoomImg ) createZoom(zoomImg);
+		}
+		changeZoomImg();
+		$carouselNav.on( 'click', '.carousel-cell', function( event ) {
+		  var index = $( event.currentTarget ).index();
+		  $carousel.flickity( 'select', index );
+		  changeZoomImg();
+		});
+
+		var flkty = $carousel.data('flickity');
+		var navTop  = $carouselNav.position().top;
+		var navCellHeight = $carouselNavCells.height();
+		var navHeight = $carouselNav.height();
+
+		$carousel.on( 'select.flickity', function() {
+		  // set selected nav cell
+		  $carouselNav.find('.is-nav-selected').removeClass('is-nav-selected');
+		  var $selected = $carouselNavCells.eq( flkty.selectedIndex )
+		    .addClass('is-nav-selected');
+		  // scroll nav
+		  var scrollY = $selected.position().top +
+		    $carouselNav.scrollTop() - ( navHeight + navCellHeight ) / 3.77;
+		  $carouselNav.animate({
+		    scrollTop: scrollY
+		  });
+		});
 
 	    
 
