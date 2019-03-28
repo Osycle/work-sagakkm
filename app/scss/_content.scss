@@ -190,6 +190,7 @@ figcaption{
 		transition: 1s ease;
 	}
 	h1{
+		color: white;
 		font-family: em(36, 14);
 		transform: matrix(1,0,0,1,0,-7);
 	}
@@ -228,7 +229,7 @@ figcaption{
 	}
 	&:hover{
 		.container-arrows{
-			width: 95%;
+			width: 95% !important;
 			opacity: 0.5;
 		}
 	}
@@ -241,11 +242,8 @@ figcaption{
     	height: 100px;
     }
     @media (min-width: 992px) {
-    	.flickity-prev-next-button{
-    		width: 115%;
-    		opacity: 0;
-    	}
-
+    	width: 115% !important;
+    	opacity: 0;
     }
 	}
 	.carousel-content{
@@ -361,6 +359,20 @@ figcaption{
 .text-shadow-1{
 	text-shadow: 0 2px 1px $color-3;
 }
+.gd-h-border{
+	&:before{
+		@extend .clafclear;
+		height: 100%;
+		width: 1px;
+		right: -15px;
+		background: linear-gradient(to bottom, transparent, $color-gray-2 50%, transparent);
+	}
+	&:nth-last-child(1){
+		&:before{
+			display: none;
+		}
+	}
+}
 //short-services
 .short-services-items{
 	.img{
@@ -370,18 +382,7 @@ figcaption{
 	}
 	figure{
 		position: relative;
-		&:before{
-			@extend .clafclear;
-			height: 100%;
-			width: 1px;
-			right: -15px;
-			background: linear-gradient(to bottom, transparent, $color-gray-2 50%, transparent);
-		}
-		&:nth-last-child(1){
-			&:before{
-				display: none;
-			}
-		}
+		@extend .gd-h-border;
 	}
 }
 .borderstyle-1{
@@ -411,6 +412,9 @@ figcaption{
 	h2,h3,h4{
 		margin: 0;
 		font-family: $font-family-3;
+	}
+	h4{
+		font-size: 1.35em;
 	}
 	.cap-content{
 		border: 2px solid white;
@@ -691,7 +695,6 @@ figcaption{
 }
 
 .finstorage-prices{
-	font-size: 30px;
 	.price{
 		display: none;
 		color: $color-3;
@@ -699,6 +702,9 @@ figcaption{
 			display: block;
 		}
 	}
+}
+.price{
+	font-size: 30px;
 }
 .finstorage-time{
 	label{
@@ -786,5 +792,164 @@ figcaption{
 				border-color: $color-2;
 			}
 		}
+	}
+}
+
+//clients
+.clients-items{
+	.img-content{
+		border: 1px solid $color-1;
+		padding: 25px 0;
+		overflow: hidden;
+		position: relative;
+	}
+	.img{
+		height: 120px;
+		background-position: center;
+		background-size: auto;
+		transition: all 0.9s ease;
+	}
+	figure{
+		&:hover{
+			.img{
+				filter: contrast(130%);
+			}
+		}
+	}
+}
+
+//contacts
+.contacts-info-items{
+	figure{
+		position: relative;
+		@extend .gd-h-border;
+	}
+	.img-content{
+		min-height: 45px;
+	}
+	.fa{
+		font-size: 30px;
+	}
+	.fa-mobile{
+		font-size: 40px;
+	}
+}
+.map-content{
+	width: 100%;
+}
+
+
+//basket
+.basket{
+	.table-content{
+		color: $color-3;
+	}
+}
+.basket-table{
+	border-spacing: 0;
+	border: 1px solid #9b9999;
+	tbody{
+		text-align: center;
+		position: relative;
+		tr{
+			th{
+				text-align: center;
+				text-transform: uppercase;
+				background-color: $color-gray-1;
+				border: none ;
+				color: $color-gray-3;
+				//border-right: 1px solid #a7a6a6;
+				border-right: 1px solid rgba(#a7a6a6, 0.5);
+				&:nth-last-child(1){
+					border-right: none;
+				}
+			}
+			td{
+				padding-top: 15px;
+				padding-bottom: 15px;
+				border-right: 1px solid rgba(#a7a6a6, 0.5);
+				&:nth-last-child(1){
+					border-right: none;
+				}
+			}
+		}
+	}
+}
+.steps{
+	border: 2px dashed $color-gray-2;
+	border-radius: 5px;
+	h5{
+		margin-top: 0;
+		color: white;
+		text-align: center;
+		padding: 10px 15px;
+		background-color: $color-3;
+	}
+}
+.steps-items{
+	figure{
+		position: relative;
+		//border: 1px solid $color-1;
+		&:before{
+			@extend .clafclear;
+			background-image: url('../img/other/steps-arrow.png');
+			width: 50px;
+			height: 40px;
+			right: 0;
+			top: 25px;
+			transform: translateX(80%);
+		}
+		&:nth-last-child(1){
+			&:before{
+				display: none;
+			}
+		}
+		@media (max-width: 991px) {
+			&:before{
+				display: none;
+			}
+		}
+	}
+	.img{
+		height: 90px;
+		background-position: center;
+	}
+}
+
+
+.basketservices-items{
+	figure{
+		.wrapper{
+			padding: 15px 10px;
+			border: 1px solid $color-gray-2;
+			border-radius: 10px;
+			background-color: $color-gray-1;
+		}
+		&:hover{
+			.img{
+				transform: translateY(-5px);
+			}
+		}
+	}
+	.img{
+		transition: all 0.3s ease;
+		height: 90px;
+		background-position: center;
+	}
+}
+.cnt-production{
+	input{
+		text-align: center;
+		background-color: white;
+		width: 30px;
+		vertical-align: middle;
+		border: 1px solid $color-3;
+	}
+	.cnt-btn{
+		background-color: transparent;
+		border: none;
+		color: $color-1;
+		vertical-align: middle;
+		font-size: 22px;
 	}
 }

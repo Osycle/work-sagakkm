@@ -179,57 +179,104 @@
 			<div class="breadcrumb-container">
 				<div class="container">
 				  <ol class="breadcrumb m-t-15 m-b-5 p-h-15">
-				    <li>Поддержка</li>
+				    <li>Контакты</li>
 				  </ol>
 				  <div class="hr-linear"><div class="row"><hr></div></div>
 			  </div>
 			</div>
 
-			<!-- supports -->
-			<div class="supports">
-				<div class="container">
-					<div class="supports-content parag-m-b-15 p-h-15 m-v-30 parag-gray">
-		    		<h5 class="color-3 m-b-30">ТЕХПОДДЕРЖКА ДЛЯ НАШИХ КЛИЕНТОВ</h5>
-		    		<p><em>ПН-ПТ  9:00-18:00</em></p>
-						<p><em>+7 (495) 123-65-74<br>+7 (495) 123-65-29</em></p>
-						<div class="color-gray-3 m-b-5">Выходные и праздничные дни</div>
-						<p><em>+7 (903) 720-18-87</em></p>
-						<p><a href="mailto:support@sagakkm.ru">support@sagakkm.ru</a></p>
-		    	</div>
-		    	<div class="supports-form p-v-30 m-t-15">
-						<form action="" method="">
-							<div class="row">
-								<div class="col-md-5 col-md-offset-1 p-h-15">
-									<div class="input-content p-h-15">
-										<input class="pie-form-control" placeholder="Имя*">
-									</div>
-									<div class="input-content p-h-15">
-										<input class="pie-form-control" placeholder="Организация*">
-									</div>
-									<div class="input-content p-h-15">
-										<input class="pie-form-control" placeholder="ИНН*">
-									</div>
-									<div class="input-content p-h-15">
-										<input class="pie-form-control" placeholder="Email*">
-									</div>
-									<div class="input-content p-h-15">
-										<input class="pie-form-control" placeholder="Телефон*">
-									</div>
-								</div>
-								<div class="col-md-5  p-h-15">
-									<div class="input-content col-md-12 m-b-15 p-h-15">
-										<textarea class="pie-form-control" placeholder="Комментарий к письму"></textarea>
-									</div>
-								</div>
-								<div class="col-md-12 btn-content p-h-15 text-center m-v-30">
-									<span class="btn-def reverse color-white">
-										<button type="submit" class="p-h-60 p-v-15">отправить</button>
-									</span>
-								</div>
+			<!-- contacts -->
+			<div class="contacts">
+				<div class="container p-b-30">
+					<div class="contacts-info-items text-center parag-gray figure-m-v-15 boxes-4 p-h-15 m-v-30">
+						<figure>
+							<div class="img-content color-3">
+								<i class="fa fa-home"></i>
 							</div>
-						</form>
-		    	</div>
+							<div class="desc-content">
+								<h5>Москва, ул. Мельникова, 3, корп.5</h5>
+								<p>Офис работает: 9:00-18:00 кроме выходных и праздничных дней</p>
+							</div>
+						</figure>
+						<figure>
+							<div class="img-content color-3">
+								<i class="fa fa-phone"></i>
+							</div>
+							<div class="desc-content">
+								<h5>офис, будни с 9:00 до 18:00</h5>
+								<p>+7 (495) 123-65-29 <br>+7 (495) 123-65-74</p>
+							</div>
+						</figure>
+						<figure>
+							<div class="img-content color-3">
+								<i class="fa fa-mobile"></i>
+							</div>
+							<div class="desc-content">
+								<h5>выходные и праздничные дни</h5>
+								<p>++7 (903) 720-18-87 <br>+7 (968) 524-66-55</p>
+							</div>
+						</figure>
+						<figure>
+							<div class="img-content color-3">
+								<i class="fa fa-envelope"></i>
+							</div>
+							<div class="desc-content">
+								<h5> <a href="mailto:info@sagakkm.ru">info@sagakkm.ru</a> </h5>
+								<p>Офис работает: 9:00-18:00 кроме выходных и праздничных дней</p>
+							</div>
+						</figure>
+					</div>
+					<div class="contacts-content">
+
+						<div class="col-sm-4 p-h-15">
+							<img src="img/other/about-img.jpg" alt="Контакты">
+						</div>
+						<div class="col-sm-8 p-h-15">
+							<h5>
+								<strong><span style="font-size: small;"><span style="color: rgb(0, 51, 102);">метро «ВОЛГОГРАДСКИЙ ПРОСПЕКТ»</span></span></strong>
+								<p>Последний вагон из центра. Выход из метро на улицу Талалихина. От метро пройти прямо вдоль Волгоградского проспекта в сторону центра до улицы Мельникова, далее по улицы Мельникова не доходя цирка танцующих фонтанов "Аквамарин", повернуть налево во двор до дома 3 корпус 5. Вход со стороны нежилых помещений, 2 подъезд, звонок домофона "сага-сервис".</span></p>
+							</h5>
+	    			</div> 
+
+					</div>
 				</div>
+				<div class="map-content">
+			    <div id="contacts_ymaps" class="map"></div>
+				</div>
+				<script src="https://api-maps.yandex.ru/2.1/?apikey=ANZmnFwBAAAAgE1NGwIANuLx2J_rusbOJch_YEg12v8wdHoAAAAAAAAAAAChPVgJ7pqFo_uwrJEcVWuEcfTEVw==&lang=ru_RU"  type="text/javascript"></script>
+				<script type="text/javascript">
+	        ymaps.ready(function(){
+            // Указывается идентификатор HTML-элемента.
+            var myMap = new ymaps.Map("contacts_ymaps", {
+                center: [55.8, 37.8],
+                zoom: 13
+            });
+
+
+					var marker = new ymaps.Placemark([55.8, 37.8], {
+						balloonContent: 'ЗАО "САГА-Сервис" Россия, Москва, улица Мельникова, 3к5 (Офис работает: 9:00-18:00 кроме выходных и праздничных дней) http://sagakkm.ru info@sagakkm.ru +7 (495) 123-65-29 +7 (495) 123-65-74'
+					}, {
+					    preset: 'islands#glyphIcon',            
+					    iconGlyph: 'wrench',
+					    iconImageSize: [48, 48],
+					    iconGlyphColor: 'gray'
+					});
+						myMap.geoObjects.add(marker);
+
+	        });
+			  </script>
+			  <style type="text/css">
+		  		.map{
+						width: 100%;
+						height: 400px;
+					}
+					@media (max-width: 991px) {
+						.map{
+							width: 100%;
+							height: 210px;
+						}
+					}
+			  </style>
 			</div>
 
 		</main><!-- ./MAIN -->

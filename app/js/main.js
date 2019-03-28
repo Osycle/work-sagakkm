@@ -208,38 +208,38 @@
 				percentPosition: true,
 				cellAlign: "center"
 			});
+		if( $('.production-carousel').length > 0 ){
+			var $carouselNav = $('.carousel-nav');
+			var $carouselNavCells = $carouselNav.find('.carousel-cell');
+			function changeZoomImg (){
+				var zoomImg = $(".production-carousel .carousel-cell.is-selected img") || null;
+				if ( zoomImg ) createZoom(zoomImg);
+			}
+			changeZoomImg();
+			$carouselNav.on( 'click', '.carousel-cell', function( event ) {
+			  var index = $( event.currentTarget ).index();
+			  $carousel.flickity( 'select', index );
+			  changeZoomImg();
+			});
 
-		var $carouselNav = $('.carousel-nav');
-		var $carouselNavCells = $carouselNav.find('.carousel-cell');
-		function changeZoomImg (){
-			var zoomImg = $(".production-carousel .carousel-cell.is-selected img") || null;
-			if ( zoomImg ) createZoom(zoomImg);
+			var flkty = $carousel.data('flickity');
+			var navTop  = $carouselNav.position().top;
+			var navCellHeight = $carouselNavCells.height();
+			var navHeight = $carouselNav.height();
+
+			$carousel.on( 'select.flickity', function() {
+			  // set selected nav cell
+			  $carouselNav.find('.is-nav-selected').removeClass('is-nav-selected');
+			  var $selected = $carouselNavCells.eq( flkty.selectedIndex )
+			    .addClass('is-nav-selected');
+			  // scroll nav
+			  var scrollY = $selected.position().top +
+			    $carouselNav.scrollTop() - ( navHeight + navCellHeight ) / 3.77;
+			  $carouselNav.animate({
+			    scrollTop: scrollY
+			  });
+			});
 		}
-		changeZoomImg();
-		$carouselNav.on( 'click', '.carousel-cell', function( event ) {
-		  var index = $( event.currentTarget ).index();
-		  $carousel.flickity( 'select', index );
-		  changeZoomImg();
-		});
-
-		var flkty = $carousel.data('flickity');
-		var navTop  = $carouselNav.position().top;
-		var navCellHeight = $carouselNavCells.height();
-		var navHeight = $carouselNav.height();
-
-		$carousel.on( 'select.flickity', function() {
-		  // set selected nav cell
-		  $carouselNav.find('.is-nav-selected').removeClass('is-nav-selected');
-		  var $selected = $carouselNavCells.eq( flkty.selectedIndex )
-		    .addClass('is-nav-selected');
-		  // scroll nav
-		  var scrollY = $selected.position().top +
-		    $carouselNav.scrollTop() - ( navHeight + navCellHeight ) / 3.77;
-		  $carouselNav.animate({
-		    scrollTop: scrollY
-		  });
-		});
-
 	    
 
 
