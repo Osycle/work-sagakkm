@@ -19,6 +19,57 @@
 </head>
 
 <body>
+	<!-- Скрытые формы -->
+	<div class="hide">
+
+		<div id="form_eds" class="form-def form-basketservices">
+			<div class="form-content">
+				<div class="cap-content text-center">
+					<h4>Выпуск ЭЦП</h4>
+				</div>
+				<div class="form-items m-v-30">
+					<form class="action">
+						<div class="radio-content m-v-15 clearfix">
+							<input type="radio" name="form-eds-items" class="hide va-middle-inline p-r-5" id="form_eds_1" data-product-name="Квалифицированная электронная подпись" data-product-price="2000р">
+							<label for="form_eds_1" role="button"  class="col-xs-12">
+								<div class="flex align-center">
+									<div class="flexbasis-md-8 p-h-15"><b>Квалифицированная электронная подпись</b></div>
+									<div class="flexbasis-md-3 p-h-15 text-right">
+										<span class="price">2000р.</span>
+									</div>
+									<div class="flexbasis-md-1 p-h-15 text-right">
+										<span class="radio-style-1"></span>
+									</div>
+								</div>
+							</label>
+						</div>
+						<div class="hr-dot-gradient"></div>
+						<div class="radio-content m-v-15 clearfix">
+							<input type="radio" name="form-eds-items" class="hide va-middle-inline p-r-5" id="form_eds_2" data-product-name="Квалифицированная электронная подпись (На носителе)" data-product-price="2500р">
+							<label for="form_eds_2" role="button"  class="col-xs-12">
+								<div class="flex align-center">
+									<div class="flexbasis-md-8 p-h-15"><b>Квалифицированная электронная подпись (На носителе)</b></div>
+									<div class="flexbasis-md-3 p-h-15 text-right">
+										<span class="price">2500р.</span>
+									</div>
+									<div class="flexbasis-md-1 p-h-15 text-right">
+										<span class="radio-style-1"></span>
+									</div>
+								</div>
+							</label>
+						</div>
+						<div class="p-v-30 hidden-sm hidden-xs"></div>
+						<div class="btn-content text-right-md m-v-30 p-h-15">
+							<span class="btn-def reverse btn-add">
+								<button type="button" class="p-h-60 p-v-15">Добавить</button>
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
 	<div id="page">
 		<!-- HEADER -->
 		<div class="header-hidden"></div>
@@ -256,7 +307,7 @@
 			    				<p><big>от 2000р.</big></p>
 			    			</div>
 			    			<div class="btn-def reverse">
-			    				<a href="" class="p-v-15 p-h-60">Выбрать</a>
+			    				<a href="javascript:;" class="p-v-15 p-h-60" data-src="#form_eds" data-fancybox="">Выбрать</a>
 			    			</div>
 			    			</div>
 			    		</figure>
@@ -266,7 +317,7 @@
 			    				<div class="img" style="background-image: url('img/other/basketservices-2.png');"></div>
 			    			</div>
 			    			<div class="desc-content">
-			    				<p class="color-black">Выпуск ЭЦП</p>
+			    				<p class="color-black">Выпуск ключа ЕГАИС</p>
 			    				<p><big>от 2000р.</big></p>
 			    			</div>
 			    			<div class="btn-def reverse">
@@ -280,7 +331,7 @@
 			    				<div class="img" style="background-image: url('img/other/basketservices-3.png');"></div>
 			    			</div>
 			    			<div class="desc-content">
-			    				<p class="color-black">Выпуск ЭЦП</p>
+			    				<p class="color-black">Регистрация ККТ</p>
 			    				<p><big>от 2000р.</big></p>
 			    			</div>
 			    			<div class="btn-def reverse">
@@ -294,7 +345,7 @@
 			    				<div class="img" style="background-image: url('img/other/basketservices-4.png');"></div>
 			    			</div>
 			    			<div class="desc-content">
-			    				<p class="color-black">Выпуск ЭЦП</p>
+			    				<p class="color-black">Услуга ОФД</p>
 			    				<p><big>от 2000р.</big></p>
 			    			</div>
 			    			<div class="btn-def reverse">
@@ -308,7 +359,7 @@
 			    				<div class="img" style="background-image: url('img/other/basketservices-5.png');"></div>
 			    			</div>
 			    			<div class="desc-content">
-			    				<p class="color-black">Выпуск ЭЦП</p>
+			    				<p class="color-black">Открытие обособленного подразделения</p>
 			    				<p><big>от 2000р.</big></p>
 			    			</div>
 			    			<div class="btn-def reverse">
@@ -322,7 +373,7 @@
 			    				<div class="img" style="background-image: url('img/other/basketservices-6.png');"></div>
 			    			</div>
 			    			<div class="desc-content">
-			    				<p class="color-black">Выпуск ЭЦП</p>
+			    				<p class="color-black">Договор на сервисное обслуживание</p>
 			    				<p><big>от 2000р.</big></p>
 			    			</div>
 			    			<div class="btn-def reverse">
@@ -386,7 +437,7 @@
 						<div class="footer-info col-md-3 p-h-15 m-v-10">
 							<div class="flex">
 								<span class="p-r-15"><i class="fa fa-home"></i></span>
-								<span><a href="mailto:info@sagakkm.ru">109316, г. Москва, улица Мельникова, 3 к.5</a></span>
+								<span>109316, г. Москва, улица Мельникова, 3 к.5</span>
 							</div>
 						</div>
 

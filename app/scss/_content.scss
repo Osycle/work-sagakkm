@@ -31,7 +31,13 @@
     background: url(../img/other/hr.png) repeat-x;
 	}
 }
-
+.hr-dot-gradient{
+	background-image: url('../img/other/hr-line-gradient.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 1px;
+	width: 100%;
+}
 
 
 
@@ -697,7 +703,6 @@ figcaption{
 .finstorage-prices{
 	.price{
 		display: none;
-		color: $color-3;
 		&.is-selected{
 			display: block;
 		}
@@ -705,6 +710,7 @@ figcaption{
 }
 .price{
 	font-size: 30px;
+	color: $color-3;
 }
 .finstorage-time{
 	label{

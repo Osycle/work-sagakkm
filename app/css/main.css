@@ -7024,6 +7024,7 @@ tbody.collapse.in {
 */
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
   position: absolute; }
 
 ::-webkit-scrollbar-thumb {
@@ -7043,6 +7044,7 @@ tbody.collapse.in {
 
 ::-o-scrollbar {
   width: 5px;
+  height: 5px;
   position: absolute; }
 
 ::-o-scrollbar-thumb {
@@ -7328,7 +7330,7 @@ table {
 .claf, [data-flicker]:before, .h-style-1:after, .h-style-1:before, .checkbox-style-1:before {
   content: " "; }
 
-.clafclear, .h1-style:not(.before-not):before, .gd-h-border:before, .short-services-items figure:before, .contacts-info-items figure:before, .steps-items figure:before, #footer:before {
+.clafclear, .h1-style:not(.before-not):before, .form-def .cap-content:before, .gd-h-border:before, .short-services-items figure:before, .contacts-info-items figure:before, .steps-items figure:before, #footer:before {
   content: " ";
   height: 100%;
   width: 100%;
@@ -7690,9 +7692,9 @@ table {
   white-space: nowrap;
   text-align: center;
   text-transform: uppercase;
-  font-weight: 600;
   overflow: hidden;
-  font-family: "Helvetica Neue", "Helvetica", sans-serif; }
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 0.9em; }
   .btn-style.text-wrap, .text-wrap.btn-def, .text-wrap.btn-icon, .text-wrap.btn-opacity {
     white-space: wrap; }
   .btn-style.radius, .radius.btn-def, .radius.btn-icon, .radius.btn-opacity {
@@ -7735,12 +7737,14 @@ table {
   .btn-def:not(.changecolor-none):hover, .btn-icon:not(.changecolor-none):hover {
     background-color: #0196C0;
     color: white; }
-  .btn-def.reverse:not([class*="bg-color"]), .btn-icon.reverse:not([class*="bg-color"]) {
-    background-color: #0196C0; }
-  .btn-def.reverse:not(.changecolor-none):hover, .btn-icon.reverse:not(.changecolor-none):hover {
-    background-color: #1BB0D1; }
-  .btn-def.reverse a, .btn-def.reverse button, .btn-icon.reverse a, .btn-icon.reverse button {
-    color: white; }
+  .btn-def.reverse, .btn-icon.reverse {
+    text-shadow: 0 2px 1px #1e6790; }
+    .btn-def.reverse:not([class*="bg-color"]), .btn-icon.reverse:not([class*="bg-color"]) {
+      background-color: #0196C0; }
+    .btn-def.reverse:not(.changecolor-none):hover, .btn-icon.reverse:not(.changecolor-none):hover {
+      background-color: #1BB0D1; }
+    .btn-def.reverse a, .btn-def.reverse button, .btn-icon.reverse a, .btn-icon.reverse button {
+      color: white; }
 
 .btn-opacity {
   background-color: transparent;
@@ -8763,16 +8767,27 @@ textarea.form-control {
 .form-def {
   padding-right: 40px;
   padding-left: 40px;
-  background-image: url("../img/bg/bg-modal-order.jpg");
   background-repeat: no-repeat;
-  background-color: #1BB0D1;
+  background-color: #eae9e9;
   background-position: center;
-  color: white; }
-  .form-def h1, .form-def h2, .form-def h3 {
-    margin-top: 0;
-    margin-bottom: 0; }
-  .form-def .cap-content h1 {
-    text-transform: uppercase; }
+  color: black; }
+  @media (min-width: 992px) {
+    .form-def {
+      width: 900px; } }
+  .form-def h4 {
+    color: #1e6790; }
+  .form-def .cap-content {
+    padding-bottom: 10px;
+    position: relative; }
+    .form-def .cap-content:before {
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      left: 0;
+      background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #d5d1d2), to(transparent));
+      background: -webkit-linear-gradient(left, transparent, #d5d1d2 50%, transparent);
+      background: -o-linear-gradient(left, transparent, #d5d1d2 50%, transparent);
+      background: linear-gradient(to right, transparent, #d5d1d2 50%, transparent); }
   .form-def .fancybox-close-small {
     top: 15px;
     right: 15px; }
@@ -8780,9 +8795,6 @@ textarea.form-control {
       font-size: 35px; }
     .form-def .fancybox-close-small:focus:after {
       outline: none; }
-  .form-def .btn-def button, .form-def .btn-def a {
-    font-size: 1.1em;
-    text-transform: uppercase; }
   .form-def input.pie-form-control {
     background-color: #f8f8f8;
     color: black; }
@@ -8863,6 +8875,13 @@ input.feedback-control {
   height: 1px;
   display: block;
   background: url(../img/other/hr.png) repeat-x; }
+
+.hr-dot-gradient {
+  background-image: url("../img/other/hr-line-gradient.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 1px;
+  width: 100%; }
 
 .fa-star {
   color: #f8f8f8; }
@@ -9430,13 +9449,13 @@ figcaption {
       width: 260px; } }
 
 .finstorage-prices .price {
-  display: none;
-  color: #1e6790; }
+  display: none; }
   .finstorage-prices .price.is-selected {
     display: block; }
 
 .price {
-  font-size: 30px; }
+  font-size: 30px;
+  color: #1e6790; }
 
 .finstorage-time label {
   display: inline-block;

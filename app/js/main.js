@@ -191,7 +191,6 @@
 
 		//flickity vertical carousel
 		// external js: flickity.pkgd.js
-
 		var $carousel = $('.production-carousel').flickity({
 				imagesLoaded: true,
 				//autoPlay: 6000,
@@ -244,79 +243,6 @@
 
 
 
-		window.carouselArticle = function() {
-			if ($(".carousel-article").length >= 0) {
-				var carouselMain = $(".carousel-article .carousel-main"),
-					carouselNav = $(".carousel-article .carousel-nav");
-
-				for (var i = 0; i < carouselMain.length; i++) {
-					var crs = $(carouselMain)
-						.eq(i)
-						.flickity({
-							imagesLoaded: true,
-							prevNextButtons: false,
-							cellAlign: "center",
-							bgLazyLoad: 1,
-							//friction: 1,
-							//selectedAttraction: 1,
-							initialIndex: 1,
-							draggable: false,
-							contain: true,
-							pageDots: false
-						});
-					var flkty = crs.data("flickity");
-
-					$(carouselNav).eq(i).flickity({
-						imagesLoaded: true,
-						initialIndex: 1,
-						asNavFor: $(carouselMain)[i],
-						prevNextButtons: false,
-						draggable: true,
-						percentPosition: true,
-						//wrapAround: true,
-						cellAlign: "center",
-						adaptiveHeight: true,
-						//contain: true,
-						pageDots: false
-					});
-          $("[data-fancybox]").fancybox({
-            afterShow: function(instance, current) {
-              this.$content.find(".carousel-main").flickity("resize");
-              this.$content.find(".carousel-nav").flickity("resize");
-            }
-          });
-				}
-			}
-		};
-		carouselArticle();
-		
-
-    // Прибавление-убавление значении
-    (function(){
-      var form = $("[data-counter]") || null;;
-      if( !form )
-        return;
-      var cntfactor = form.attr("data-counter")*1;
-
-      $(document).on("click", "[data-counter-btn]", function(){
-        var cntVal;
-        var cntInput = $(this).closest( form ).find("[data-counter-input]");
-        
-        cntVal = (cntInput.val()*1);
-
-        if( $(this).hasClass("plus") )
-          cntVal = cntVal + cntfactor;
-        if( $(this).hasClass("minus") & cntVal > 0 )
-          cntVal = cntVal - cntfactor;
-        if( isNaN( cntVal ) || cntVal < 0) cntVal = 0;
-        cntInput.val( cntVal ).attr("value", cntVal)
-      })
-      $(".cnt-input").on( "keypress", function(e){
-        //console.log(this, e);
-      } )
-
-    })();
-
 
     
 
@@ -357,16 +283,6 @@
 
 		});
 		$(window).trigger("scroll");
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -412,17 +328,118 @@
 		preLoader.preImg();
 
 
-		//finstorage-time
+
+
+
+
+
+
+
+
+
+
+    // Прибавление-убавление значении
+    function counterAddRem(fn){
+      var form = $("[data-counter]") || null;;
+      if( !form )
+        return;
+      var cntfactor = form.attr("data-counter")*1;
+
+      $(document).on("click", "[data-counter-btn]", function(){
+        var cntVal;
+        var cntInput = $(this).closest( form ).find("[data-counter-input]");
+        
+        cntVal = (cntInput.val()*1);
+
+        if( $(this).hasClass("plus") )
+          cntVal = cntVal + cntfactor;
+        if( $(this).hasClass("minus") & cntVal > 0 )
+          cntVal = cntVal - cntfactor;
+        if( isNaN( cntVal ) || cntVal < 0) cntVal = 0;
+        	cntInput.val( cntVal ).attr("value", cntVal)
+
+        if( typeof fn == "function" )
+        	fn();
+      })
+      $(".cnt-input").on( "keypress", function(e){
+        //console.log(this, e);
+      } )
+    };
+    counterAddRem();
+
+
+
+		//production finstorage-time
 		$("[data-change-active]").on("change", function(){
-			var activeClass =  "is-selected"
-			var attrValue = $(this).attr("data-change-active")
+			var activeClass =  "is-selected";
+			var attrValue = $(this).attr("data-change-active");
 			var arrClass = attrValue.split("|");
-			$( $(arrClass[0]).children().removeClass(activeClass) )
+			$(arrClass[0]).children().removeClass(activeClass);
 			$(arrClass[1]).addClass(activeClass);
-			console.log($(arrClass[1]));
 		})
 
+		/*
+			basket
+		*/
+		//Имена классов
+		var productNameClass = "product-name";
+		var productPriceClass = "product-price";
+		var pricePostfix = "р";
+		$(".basket-table").on("click", ".cnt-btn", function(){
+			//recountProduct($(this).closest(".product-tablerow"));
 
+		})
+		//Функция возведения в число
+		function cntClear(str){
+			var int = "";
+			str.match(/(\d+)/gim).map(function(p){
+				int += p;
+			})
+			return int*1;
+		}
+
+		//Функция пересчёт стоимости с учётом кол-во
+		function recountProduct(elContainer){
+			var elContainer = $(elContainer);
+			var productQuantity = elContainer.find(".cnt-input").val()*1;
+			var productPrice = elContainer.find("."+productPriceClass).text();
+			var newPrice = productQuantity * cntClear(productPrice);
+			elContainer.find(".product-totalprice").text(newPrice+pricePostfix);
+			elContainer.find(".cnt-input");
+			console.log(newPrice, productQuantity);
+		}
+
+		//Функция добавление в таблицу
+		function addBasketTable( productInputId, productName, productPrice ){
+			var template = '<tr class="product-tablerow" data-product-input-id="'+productInputId+'">'+
+								        '<td class="'+productNameClass+'">'+productName+'</td>'+
+								        '<td class="'+productPriceClass+'">'+productPrice+'</td>'+
+								        '<td>'+
+													'<div class="cnt-production" data-counter="1">'+
+														'<button type="button" class="cnt-btn minus" data-counter-btn=""><i class="fa fa-caret-left"></i></button>'+
+														'<input class="cnt-input" name="products-cnt" value="1" disabled="disabled" data-counter-input="">'+
+														'<button type="button" class="cnt-btn plus" data-counter-btn=""><i class="fa fa-caret-right"></i></button>'+
+													'</div>'+
+								        '</td>'+
+								        '<td class="product-totalprice">'+productPrice+'</td>'+
+								        '<td class="product-remove"><i role="button" class="fa fa-close fa-1-5x"></i></td>'+
+								    	'</tr>'
+			$(".basket-table tbody").append(template);
+			var productTablerow = $('.product-tablerow');
+			counterAddRem( function(){recountProduct( productTablerow);} );//активация прибавление-убавление значении
+			
+		}
+		//
+		$(".btn-add").on("click", function(){
+			var that = $(this);
+			var input = that.closest("form").find("input:checked");
+			var productInputId = input.attr("id");
+			var productName = input.attr("data-product-name");
+			var productPrice = input.attr("data-product-price");
+			addBasketTable( productInputId, productName, productPrice );
+			$("[data-fancybox-close]").trigger("click");
+			console.log(input);
+		})
 
 
 

@@ -54,6 +54,7 @@ $bg-color-gray: $color-gray-1;
 // CHROME
 ::-webkit-scrollbar{
 	width:5px;
+	height:5px;
 	position: absolute;
 }
  ::-webkit-scrollbar-thumb{
@@ -73,6 +74,7 @@ $bg-color-gray: $color-gray-1;
 // OPERA
 ::-o-scrollbar{
 	width:5px;
+	height:5px;
 	position: absolute;
 }
 ::-o-scrollbar-thumb{
@@ -549,10 +551,10 @@ table {
 	white-space: nowrap;
 	text-align: center;	
 	text-transform: uppercase;
-	font-weight: 600;
 	//border-radius: 5px;
 	overflow: hidden;
 	font-family: $font-family-1;
+	font-size: 0.9em;
 	&.text-wrap{
 		white-space: wrap;
 	}
@@ -615,6 +617,7 @@ table {
 		color: white;
 	}
 	&.reverse{
+		text-shadow: 0 2px 1px $color-3;
 		&:not([class*="bg-color"]){
 			background-color: $color-1;
 		}

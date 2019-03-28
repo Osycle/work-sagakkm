@@ -633,18 +633,26 @@ textarea.form-control{
 .form-def{	
 	padding-right: 40px;
 	padding-left: 40px;
-	background-image: url('../img/bg/bg-modal-order.jpg');
 	background-repeat: no-repeat;
-	background-color: $color-2;
+	background-color: #eae9e9;
 	background-position: center;
-	color: white;
-	h1, h2, h3{
-		margin-top: 0;
-		margin-bottom: 0;
+	color: black;
+	@media (min-width: 992px) {
+		width: 900px;
+	}
+	h4{
+		color: $color-3;
 	}
 	.cap-content{
-		h1{
-			text-transform: uppercase;
+		padding-bottom: 10px;
+		position: relative;
+		&:before{
+			@extend .clafclear;
+			bottom: 0;
+			width: 100%;
+			height: 1px;
+			left: 0;
+			background: linear-gradient(to right, transparent, $color-gray-2 50%, transparent);
 		}
 	}
 	.fancybox-close-small{
@@ -657,12 +665,7 @@ textarea.form-control{
     	outline: none;
     }
 	}
-	.btn-def{
-		button, a{
-			font-size: 1.1em;
-			text-transform: uppercase;
-		}
-	}
+
 
 	input.pie-form-control{
 		background-color: $color-gray-1;
