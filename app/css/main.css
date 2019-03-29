@@ -8883,6 +8883,15 @@ input.feedback-control {
   height: 1px;
   width: 100%; }
 
+.hr-statement {
+  background-image: url("../img/other/hr-statement.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%; }
+
 .fa-star {
   color: #f8f8f8; }
   .fa-star.fill {
@@ -9563,21 +9572,41 @@ figcaption {
   .basket-table tbody {
     text-align: center;
     position: relative; }
-    .basket-table tbody tr th {
-      text-align: center;
-      text-transform: uppercase;
-      background-color: #f8f8f8;
-      border: none;
-      color: #3c3c3c;
-      border-right: 1px solid rgba(167, 166, 166, 0.5); }
-      .basket-table tbody tr th:nth-last-child(1) {
-        border-right: none; }
-    .basket-table tbody tr td {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      border-right: 1px solid rgba(167, 166, 166, 0.5); }
-      .basket-table tbody tr td:nth-last-child(1) {
-        border-right: none; }
+    .basket-table tbody tr {
+      background-color: transparent !important; }
+      .basket-table tbody tr th {
+        text-align: center;
+        text-transform: uppercase;
+        background-color: #f8f8f8;
+        border: none;
+        color: #3c3c3c;
+        border-right: 1px solid rgba(167, 166, 166, 0.5); }
+        .basket-table tbody tr th:nth-last-child(1) {
+          border-right: none; }
+      .basket-table tbody tr td {
+        vertical-align: middle;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-right: 1px solid rgba(167, 166, 166, 0.5);
+        background-color: transparent; }
+        .basket-table tbody tr td:nth-last-child(1) {
+          border-right: none; }
+
+@-webkit-keyframes anim-flicker {
+  from, to {
+    background-color: transparent; }
+  50% {
+    background-color: rgba(30, 103, 144, 0.2); } }
+
+@keyframes anim-flicker {
+  from, to {
+    background-color: transparent; }
+  50% {
+    background-color: rgba(30, 103, 144, 0.2); } }
+
+.anim-flicker {
+  -webkit-animation: anim-flicker 1s ease-in-out 4;
+  animation: anim-flicker 1s ease-in-out 4; }
 
 .steps {
   border: 2px dashed #d5d1d2;
@@ -9738,10 +9767,10 @@ figcaption {
   -webkit-border-radius: 0;
   border-radius: 0;
   background-color: transparent;
-  color: white; }
+  color: #1e6790; }
 
 .fancybox-close-small:hover:after {
-  color: white;
+  color: #1BB0D1;
   background-color: transparent; }
 
 html .fancybox-show-thumbs .fancybox-thumbs {

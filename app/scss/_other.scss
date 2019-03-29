@@ -77,11 +77,11 @@
 	&:after{
 		border-radius: 0;
 		background-color: transparent;
-		color: white;
+		color: $color-3;
 	}
 	&:hover{
 		&:after{
-			color: white;
+			color: $color-2;
 			background-color: transparent;
 		}
 	}

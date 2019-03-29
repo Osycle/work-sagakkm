@@ -38,6 +38,15 @@
 	height: 1px;
 	width: 100%;
 }
+.hr-statement{
+	background-image: url('../img/other/hr-statement.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+}
 
 
 
@@ -853,11 +862,13 @@ figcaption{
 }
 .basket-table{
 	border-spacing: 0;
+
 	border: 1px solid #9b9999;
 	tbody{
 		text-align: center;
 		position: relative;
 		tr{
+			background-color: transparent !important;
 			th{
 				text-align: center;
 				text-transform: uppercase;
@@ -871,9 +882,11 @@ figcaption{
 				}
 			}
 			td{
+				vertical-align: middle;
 				padding-top: 15px;
 				padding-bottom: 15px;
 				border-right: 1px solid rgba(#a7a6a6, 0.5);
+				background-color: transparent;
 				&:nth-last-child(1){
 					border-right: none;
 				}
@@ -881,6 +894,19 @@ figcaption{
 		}
 	}
 }
+@keyframes anim-flicker {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba($color-3, 0.2);
+  }
+}
+
+.anim-flicker{
+	animation: anim-flicker 1s ease-in-out 4;
+}
+
 .steps{
 	border: 2px dashed $color-gray-2;
 	border-radius: 5px;
