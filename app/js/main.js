@@ -61,6 +61,7 @@
 				afterShow: function(instance, current) {},
 				animationEffect : "zoom",
 				animationDuration : 800,
+				touch : false,
 				thumbs : {
 					autoStart   : true
 				},
@@ -339,13 +340,13 @@
 
 
     // Прибавление-убавление значении
-    function counterAddRem(fn){
-      var form = $("[data-counter]") || null;;
+    function counterAddRem(container, fn){
+      var form = $(container).find("[data-counter]") || null;;
       if( !form )
         return;
       var cntfactor = form.attr("data-counter")*1;
 
-      $(document).on("click", "[data-counter-btn]", function(){
+      $(container).on("click", "[data-counter-btn]", function(){
         var cntVal;
         var cntInput = $(this).closest( form ).find("[data-counter-input]");
         
@@ -365,11 +366,11 @@
         //console.log(this, e);
       } )
     };
-    counterAddRem();
+    //counterAddRem();
 
 
 
-		//production finstorage-time
+		// production finstorage-time
 		$("[data-change-active]").on("change", function(){
 			var activeClass =  "is-selected";
 			var attrValue = $(this).attr("data-change-active");
@@ -377,15 +378,31 @@
 			$(arrClass[0]).children().removeClass(activeClass);
 			$(arrClass[1]).addClass(activeClass);
 		})
+		// statement удаление ненужных полей ИП
+		$(".statement-types input").on("change", function(){
+			var that = $(this)
+			var hideClass = that.attr("data-hideclass") || null;
+			var hideType = that.attr("data-statement-type") || null;
+			$("[data-hideinput-container]").removeClass("none");
+			if( !hideClass )
+				return;
+			if( hideType != null )
+				$('[data-hideinput-container="' + hideType + '"]').addClass("none");
+			
 
-		/*
-			basket
-		*/
+			console.log(hideType);
+		})
+
+
+		/* ------------------
+			BASKET
+		-------------------*/
 		var basketContainer = $(".basket-table");
 
 		// Имена классов
 		var productNameClass = "product-name";
 		var productPriceClass = "product-price";
+		var productTotalpriceClass = "product-totalprice";
 		var productRemoveClass = "product-remove";
 		var productTablerowClass = "product-tablerow";
 		// Постфикс
@@ -394,8 +411,8 @@
 		//Функция возведения в число
 		function cntClear(str){
 			var int = "";
-			str.match(/(\d+)/gim).map(function(pathint){
-				int += pathint;
+			str.match(/(\d+)/gim).map(function(argument){
+				int += argument;
 			})
 			return int*1;
 		}
@@ -404,15 +421,27 @@
 		function recountProduct(productTablerow){
 			var productTablerow = $(productTablerow);
 			var productQuantity = productTablerow.find(".cnt-input").val()*1;
-			var productPrice = productTablerow.find("."+productPriceClass).text();
+			var productPrice = productTablerow.find("." + productPriceClass).text();
 			var newPrice = productQuantity * cntClear(productPrice);
-			productTablerow.find(".product-totalprice").text(newPrice+pricePostfix);
+			productTablerow.find("." + productTotalpriceClass).text(newPrice + pricePostfix);
 			productTablerow.find(".cnt-input");
+			recountTableProducts(basketContainer);
 			//console.log(newPrice, productQuantity);
+		}
+		// Итоговая стоимость услуг в таблице
+		function recountTableProducts(basketContainer){
+			var elTotalprices = basketContainer.find("."+ productTotalpriceClass);
+			var totalPrice = 0;
+			if(!elTotalprices)
+				return false;
+			elTotalprices.map(function(i, el){
+				totalPrice += cntClear($(el).text());
+			})
+			$(".totalprice-products").text(totalPrice + pricePostfix);
 		}
 		// Проверка на совпадений
 		function checkAlikeProduct(productInputId){
-			var productTablerow = $(basketContainer).find("[data-product-input-id='"+productInputId+"']");
+			var productTablerow = $(basketContainer).find("[data-product-input-id='"+ productInputId + "']");
 			if(productTablerow.length > 0)
 				return productTablerow;
 			else
@@ -426,29 +455,34 @@
 			}, 500);
 		}
 		//Функция добавлние доп. услуг
-		function addExtraServices(modalForm, productInputId, productName){
+		function addExtraServices(modalForm, productInputId, productName, productPrice){
 			var inputCheckbox = modalForm.find("input[type='checkbox']:checked");
-			var productTablerow = $("[data-product-input-id="+productInputId+"]")
-			var newProductName = productName;
+			var productTablerow = $("[data-product-input-id=" + productInputId + "]")
+			var newProductName = "";
+			var newProductPrice =  cntClear(productPrice);
 			inputCheckbox.map(function(i ,el){
 				var extraServiceName = $(el).attr("data-extra-service-name");
 				var extraServicePrice = $(el).attr("data-extra-service-price");
-				newProductName += "<br>" + extraServiceName + "(" + extraServicePrice + ")";
-				console.log($(el).attr("data-extra-service-name"));
+				newProductPrice = newProductPrice + cntClear(extraServicePrice);
+				newProductName += "<br>" + extraServiceName;
 			})
-			productTablerow.find("."+productNameClass).append(newProductName);
+			productTablerow.find("." + productPriceClass).text("").append(newProductPrice + pricePostfix);
+			productTablerow.find("." + productNameClass).append(newProductName);
+			recountProduct(productTablerow);
 		}
 
-		//Функция добавление в таблицу
+		//Функция добавление услуг в таблицу
 		function addBasketTable( productInputId, productName, productPrice ){
 			var productTablerow = checkAlikeProduct(productInputId);
 			if(productTablerow){
-				productTablerow.removeClass("anim-flicker");
+				//productTablerow.removeClass("anim-flicker");
 				setTimeout(function(){
 					productTablerow.addClass("anim-flicker");
 				}, 1000)
 				scrollBasketTable();
-				return false;
+				console.log(productTablerow);
+				productTablerow.remove();
+				//return false;
 			}
 			
 			var template = '<tr class="'+productTablerowClass+' anim-flicker" data-product-input-id="'+productInputId+'">'+
@@ -467,7 +501,8 @@
 			$(basketContainer).find("tbody").append(template);
 
 			var productTablerow = $("[data-product-input-id="+productInputId+"]");
-			counterAddRem( function(){recountProduct( productTablerow);} );//активация прибавление-убавление значении
+			counterAddRem( productTablerow, function(){recountProduct( productTablerow);} );//активация прибавление-убавление значении
+			recountProduct(productTablerow);
 			scrollBasketTable();
 		}
 
@@ -475,19 +510,20 @@
 		$(".btn-add-modal").on("click", function(){
 			var that = $(this);
 			var modalForm = that.closest("form");
-			var input = modalForm.find("input:checked");
+			var input = modalForm.find("[data-product-name]"+"input:checked");
 
 			if(input.length <= 0)
 				return;
 			var productInputId = input.attr("id");
 			var productName = input.attr("data-product-name");
 			var productPrice = input.attr("data-product-price");
+
 			addBasketTable( productInputId, productName, productPrice );
 
-			addExtraServices(modalForm, productInputId, productName);
+			addExtraServices(modalForm, productInputId, productName, productPrice);
 
 			$("[data-fancybox-close]").trigger("click");
-		})
+		});
 
 
 		// Добавление
@@ -502,12 +538,12 @@
 			addBasketTable( productInputId, productName, productPrice );
 
 			$("[data-fancybox-close]").trigger("click");
-		})
+		});
 		//Удаление с таблицы
 		$(basketContainer).on("click", ("."+productRemoveClass), function(){
 			var that = $(this);
 			that.closest("."+productTablerowClass).remove();
-		})
+		});
 
 
 

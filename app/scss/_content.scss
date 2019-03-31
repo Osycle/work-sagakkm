@@ -46,6 +46,7 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
 	width: 100%;
+	float: left;
 }
 
 
@@ -435,6 +436,9 @@ figcaption{
 		border: 2px solid white;
 		border-radius: 15px;
 		padding: 5px 30px;
+		h2{
+			font-weight: 600;
+		}
 	}
 	figure{
 		position: relative;
@@ -862,7 +866,9 @@ figcaption{
 }
 .basket-table{
 	border-spacing: 0;
-
+	.cnt-production{
+		//letter-spacing: -7px;
+	}
 	border: 1px solid #9b9999;
 	tbody{
 		text-align: center;
@@ -983,5 +989,53 @@ figcaption{
 		color: $color-1;
 		vertical-align: middle;
 		font-size: 22px;
+	}
+}
+
+
+.form-ofd{
+	.img{
+		height: 60px;
+		background-size: auto;
+		background-position: center;
+	}
+}
+.form-maintenance{
+	.img{
+		height: 130px;
+		background-size: auto;
+		background-position: center;
+	}
+}
+
+.statement-form{
+	font-family: $font-family-3;
+	p{
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	form{
+		font-size: 0.85em;
+	}
+	.pie-form-control{
+		border-color: $color-gray-2;
+	}
+	.selection{
+		text-transform: uppercase;
+	}
+	.checkbox-style-1{
+		width: 20px;
+		height: 20px;
+	}
+	@media (max-width: 991px){
+		.income-inp{
+			.income-inp-item{
+				width: 100%;
+			}
+			.flex{
+				justify-content: space-between;
+			}
+		}
+		
 	}
 }

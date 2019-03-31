@@ -127,23 +127,23 @@
 		<!-- MIN MENU -->
 		<div id="min-menu" data-aos="fade">
 			<ul>
-				<li><a href="index.html" title=>Главная</a></li>
-				<li><a href="about.html" title=>О нас</a>
-					<ul>
-						<li><a href="">Submenu</a></li>
-						<li><a href="">Submenu</a></li>
-						<li><a href="">Submenu</a></li>
-						<li><a href="">Submenu</a></li>
-					</ul>
-				</li>
-				<li><a href="brick.html" title=>Кирпич</a></li>
-				<li><a href="terrazzo.html" title=>Терраццо</a></li>
-				<li><a href="certifications.html" title=>Сертификаты</a></li>
-				<li><a href="gallery.html" title=>Гелерея</a></li>
-				<li><a href="vacancy.html" title=>Вакансии</a></li>
-				<li><a href="quarry.html" title=>Карьер</a></li>
-				<li><a href="reviews.html" title=>Отзывы</a></li>
-				<li><a href="contacts.html" title=>Контакты</a></li>
+					<li><a href="index.html" title=>Главная</a></li>
+					<li><a href="about.html" title=>О компании</a></li>
+					<li><a href="productions.html" title=>Товары</a>
+						<ul>
+							<li><a href="">Автономные кассы </a></li>
+							<li><a href="">POS-периферия</a></li>
+							<li><a href="">Сканеры штрихкода</a></li>
+							<li><a href="">Принтеры этикеток</a></li>
+							<li><a href="">Электронные весы</a></li>
+							<li><a href="">Эквайринг</a></li>
+							<li><a href="">РАСПРОДАЖА</a></li>
+						</ul>
+					</li>
+					<li><a href="services.html" title=>Услуги</a></li>
+					<li><a href="supports.html" title=>Поддержка</a></li>
+					<li><a href="clients.html" title=>Клиенты</a></li>
+					<li><a href="contacts.html" title=>Контакты</a></li>
 			</ul>
 		</div>
 		<!-- MIN MENU HEADER -->
@@ -153,7 +153,7 @@
 				<div class="min-menu-logo">
 					<div>
 						<a href="index.html" title="">
-							<div class="img" style="background-image: url('img/logo.png');"></div>
+							<div class="img" style="background-image: url('img/mini-logo.png');"></div>
 						</a>
 					</div>	
 				</div>
@@ -192,13 +192,13 @@
 							<h4>ЗАЯВЛЕНИЕ НА РЕГИСТРАЦИЮ ККТ</h4>
 							<div class="hr-statement"></div>
 						</div>
-						<div class="statement-form">
-							<form>
+						<div class="statement-form color-3 parag-m-b-5">
+							<form class="clearfix">
 								<p class="text-left">* Поля обязательные к заполнению</p>
 
-								<div class="flex align-center justify-c-center">
-									<div class="m-v-15 clearfix">
-										<input type="radio" name="statement-type" class="hide" id="statement_type_1">
+								<div class="statement-types">
+									<div class="m-v-15 col-md-3 col-md-offset-3 text-center clearfix">
+										<input type="radio" name="statement-types" class="hide" id="statement_type_1">
 										<label for="statement_type_1" role="button"  class="col-xs-12">
 											<div class="p-h-15">
 												<h4 class="va-middle-inline">Организация</h4>
@@ -206,8 +206,8 @@
 											</div>
 										</label>
 									</div>
-									<div class="m-v-15 clearfix">
-										<input type="radio" name="statement-type" class="hide" id="statement_type_2">
+									<div class="m-v-15 col-md-3 text-center">
+										<input type="radio" name="statement-types" class="hide" id="statement_type_2" data-hideclass=".ip-input" data-statement-type="2">
 										<label for="statement_type_2" role="button"  class="col-xs-12">
 											<div class="p-h-15">
 												<h4 class="va-middle-inline">ИП</h4>
@@ -217,6 +217,368 @@
 									</div>
 								</div>
 
+								<div class="row">
+									<div class="col-md-12 p-h-15 m-v-15">
+										<p>ИНН*</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: 7718129187">
+									</div>
+									<div class="col-md-12 p-h-15 m-v-15">
+										<p>ОРГАНИЗАЦИЯ / ИП**</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: ЗАО “САГА-Сервис”">
+									</div>
+									<div class="col-md-6 p-h-15 m-v-15" data-hideinput-container="2">
+										<p>КПП*</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: 771801001">
+									</div>
+									<div class="col-md-6 p-h-15 m-v-15">
+										<p>ОГРН /ОГРНИП*</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: 1037739182293">
+									</div>
+									<div class="col-md-12 p-h-15 m-v-15" data-hideinput-container="2">
+										<p>ДИРЕКТОР*</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: ШАРАПОВ АЛЕКСАНДР СЕРГЕЕВИЧ">
+									</div>
+								</div>
+
+								<div class="hr-statement m-v-60"></div>
+								<div class="row">
+									<div class="col-md-12 p-h-15 m-v-15">
+										<p>БИК</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: 044525225">
+									</div>
+									<div class="col-md-12 p-h-15 m-v-15">
+										<p>РАСЧЕТНЫЙ СЧЕТ</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: 000000000000">
+									</div>
+									<div class="col-md-12 p-h-15 m-v-15">
+										<p>КОР. СЧЕТ</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: 30101810400000000225">
+									</div>
+									<div class="col-md-12 p-h-15 m-v-15">
+										<p>БАНК</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: ПАО СБЕРБАНК">
+									</div>
+									<div class="col-md-12 p-h-15 m-v-15">
+										<input type="checkbox" class="hide" id="net_scheta">
+										<label for="net_scheta" role="button" class="col-xs-12">
+											<div class="align-i-center">
+												<big class="line-height">НЕТ СЧЕТА</big>
+												<span class="checkbox-style-1 m-l-15"></span>
+											</div>
+										</label>
+									</div>
+								</div>
+
+								<div class="hr-statement m-v-60"></div>
+
+								<div class="row">
+									<div class="col-md-12 p-h-15 text-center text-uppercase">
+										<div class="row">
+											<div class="col-md-4 p-h-15">
+												<span>НЕОБХОДИМО ОФФОРМИТЬ ЭЦП:</span>
+											</div>
+											<div class="col-md-2 p-h-15 m-v-15 clearfix">
+												<input type="radio" name="eds" class="hide" id="eds_1">
+												<label for="eds_1" role="button"  class="col-xs-12">
+													<div class="flex align-center justify-c-center">
+														<span class=""><b class="line-height">Да</b></span>
+														<span class="m-l-15 flex"><span class="radio-style-1"></span></span>
+													</div>
+												</label>
+											</div>
+											<div class="col-md-2 p-h-15 m-v-15 clearfix">
+												<input type="radio" name="eds" class="hide" id="eds_2">
+												<label for="eds_2" role="button"  class="col-xs-12">
+													<div class="flex align-center justify-c-center">
+														<span class=""><b class="line-height">Нет</b></span>
+														<span class="m-l-15 flex"><span class="radio-style-1"></span></span>
+													</div>
+												</label>
+											</div>
+											<div class="col-md-4 p-h-15 m-v-15 clearfix">
+												<input type="checkbox" name="eds" class="hide" id="eds_3">
+												<label for="eds_3" role="button"  class="col-xs-12">
+													<div class="flex align-center justify-c-center">
+														<span class=""><b class="line-height">Есть Эцп, готовы предоствать</b></span>
+														<span class="m-l-15 flex"><span class="checkbox-style-1"></span></span>
+													</div>
+												</label>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<div class="hr-statement m-v-60"></div>
+
+								<div class="row">
+									<div class="col-md-11 p-h-15 m-v-15">
+										<p>МОДЕЛЬ ККТ*</p>
+										<select class="js-select search-hide box-xs-10">
+											<option></option>
+											<option>sub select 1</option>
+											<option>sub select 2</option>
+											<option>sub select 3</option>
+										</select>
+									</div>
+									<div class="col-md-1 p-h-15 m-v-15">
+										<p>Кол-во*</p>
+										<input type="text" name="" class="pie-form-control text-center" value="1">
+									</div>
+									<div class="col-md-12 p-h-15 m-v-15">
+										<p>АДРЕС МЕСТА УСТАНОВКИ*</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: 109316, г. Москва, ул Мельникова, д. 3, к. 5">
+									</div>
+									<div class="col-md-6 p-h-15 m-v-15" data-hideinput-container="2">
+										<p>КПП ПОДРАЗДЕЛЕНИЯ*</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: 771801001">
+									</div>
+									<div class="col-md-6 p-h-15 m-v-15 p-t-40 clearfix">
+										<input type="checkbox" name="eds" class="hide" id="kpp">
+										<label for="kpp" role="button"  class="col-xs-12">
+											<div class="flex align-center justify-c-center text-uppercase">
+												<span class=""><b class="line-height">НЕОБХОДИМО ОТКРЫТЬ ОБОСОБЛЕНОЕ ПОДРАЗДЕЛЕНИЕ</b></span>
+												<span class="m-l-15 flex"><span class="checkbox-style-1"></span></span>
+											</div>
+										</label>
+									</div>
+									<div class="col-md-12 p-h-15 m-v-15">
+										<p>НАЗВАНИЕ ТОРГОВОЙ ТОЧКИ*</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: ОФИС">
+									</div>
+
+									<div class="income-inp col-md-12 align-i-center flex-adaptive justify-c-center m-t-30">
+										<div class="income-inp-item p-h-15 m-v-15">
+											<input type="checkbox" name="eds" class="hide" id="dohod_1">
+											<label for="dohod_1" role="button"  class="col-xs-12">
+												<div class="flex align-center text-uppercase">
+													<span class=""><b class="line-height">ОСН</b></span>
+													<span class="m-l-15 flex"><span class="checkbox-style-1"></span></span>
+												</div>
+											</label>
+										</div>
+										<div class="income-inp-item p-h-15 m-v-15">
+											<input type="checkbox" name="eds" class="hide" id="dohod_2">
+											<label for="dohod_2" role="button"  class="col-xs-12">
+												<div class="flex align-center text-uppercase">
+													<span class=""><b class="line-height">УСН ДОХОД</b></span>
+													<span class="m-l-15 flex"><span class="checkbox-style-1"></span></span>
+												</div>
+											</label>
+										</div>
+										<div class="income-inp-item p-h-15 m-v-15">
+											<input type="checkbox" name="eds" class="hide" id="dohod_3">
+											<label for="dohod_3" role="button"  class="col-xs-12">
+												<div class="flex align-center text-uppercase">
+													<span class=""><b class="line-height"> УСН ДОХОД-РАСХОД</b></span>
+													<span class="m-l-15 flex"><span class="checkbox-style-1"></span></span>
+												</div>
+											</label>
+										</div>
+										<div class="income-inp-item p-h-15 m-v-15">
+											<input type="checkbox" name="eds" class="hide" id="dohod_4">
+											<label for="dohod_4" role="button"  class="col-xs-12">
+												<div class="flex align-center text-uppercase">
+													<span class=""><b class="line-height">ПСН</b></span>
+													<span class="m-l-15 flex"><span class="checkbox-style-1"></span></span>
+												</div>
+											</label>
+										</div>
+										<div class="income-inp-item p-h-15 m-v-15">
+											<input type="checkbox" name="eds" class="hide" id="dohod_5">
+											<label for="dohod_5" role="button"  class="col-xs-12">
+												<div class="flex align-center text-uppercase">
+													<span class=""><b class="line-height">ЕНВД</b></span>
+													<span class="m-l-15 flex"><span class="checkbox-style-1"></span></span>
+												</div>
+											</label>
+										</div>
+									</div>
+
+									<div class="col-md-12 p-h-15 m-v-15 clearfix">
+										<div class="row">
+
+											<div class="flex align-center flex-adaptive clearfix">
+												<div class="col-md-11 p-h-15 m-v-15">
+													<span class="font-w-3">ККТ используется при приеме денежных средств при реализации лотерейных билетов, электронных лотерейных билетов, приеме лотерейных ставок и выплате денежных средств в виде выигрыша при осуществлени деятельности по организации и проведению лотерей</span>
+												</div>
+												<div class="col-md-1 p-h-15 m-v-15">
+													<input type="checkbox" class="hide" id="kkt_1">
+													<label for="kkt_1" role="button"  class="col-xs-12">
+															<span class="p-l-offset flex"><span class="checkbox-style-1"></span></span>
+													</label>
+												</div>
+											</div>
+											<div class="flex align-center flex-adaptive clearfix">
+												<div class="col-md-11 p-h-15 m-v-15">
+													<span class="font-w-3">ККТ используется при приеме ставок и выплате денежных средств в виде выигрыша при осуществлени деятельности по организации и проведению азартных иг</span>
+												</div>
+												<div class="col-md-1 p-h-15 m-v-15">
+													<input type="checkbox" class="hide" id="kkt_2">
+													<label for="kkt_2" role="button"  class="col-xs-12">
+															<span class="p-l-offset flex"><span class="checkbox-style-1"></span></span>
+													</label>
+												</div>
+											</div>
+
+											<div class="flex align-center flex-adaptive clearfix">
+												<div class="col-md-11 p-h-15 m-v-15">
+													<span class="font-w-3">ККТ используется при осуществлении деятельности банковского платежного агента (субагента)</span>
+												</div>
+												<div class="col-md-1 p-h-15 m-v-15">
+													<input type="checkbox" class="hide" id="kkt_3">
+													<label for="kkt_3" role="button"  class="col-xs-12">
+															<span class="p-l-offset flex"><span class="checkbox-style-1"></span></span>
+													</label>
+												</div>
+											</div>
+
+											<div class="flex align-center flex-adaptive clearfix">
+												<div class="col-md-11 p-h-15 m-v-15">
+													<span class="font-w-3">ККТ используется при осуществлении деятельности платежного агента (субагента)</span>
+												</div>
+												<div class="col-md-1 p-h-15 m-v-15">
+													<input type="checkbox" class="hide" id="kkt_4">
+													<label for="kkt_4" role="button"  class="col-xs-12">
+															<span class="p-l-offset flex"><span class="checkbox-style-1"></span></span>
+													</label>
+												</div>
+											</div>
+
+											<div class="flex align-center flex-adaptive clearfix">
+												<div class="col-md-6 p-h-15 m-v-15">
+													<span class="font-w-3">ККТ входит в состав автоматического устройства для расчетов</span>
+												</div>
+												<div class="col-md-5 p-h-15 m-v-15">
+													<span class="va-middle-inline m-v-10">НОМЕР УСТРОЙСТВА</span>
+													<span class="va-middle-inline p-l-offset"><input type="text" name="" class="pie-form-control" style="height: 30px"></span>
+										p	</div>offset											<div class="col-md-1 p-h-15 m-v-15">
+													<input type="checkbox" class="hide" id="kkt_5">
+													<label for="kkt_5" role="button"  class="col-xs-12">
+															<span class="m-l-15 flex"><span class="checkbox-style-1"></span></span>
+													</label>
+												</div>
+											</div>
+
+											<div class="flex align-center flex-adaptive clearfix">
+												<div class="col-md-11 p-h-15 m-v-15">
+													<span class="font-w-3">ККТ используется для расчетов в информационно-телекоммуникационной сети “ИНТЕРНЕТ</span>
+												</div>
+												<div class="col-md-1 p-h-15 m-v-15">
+													<input type="checkbox" class="hide" id="kkt_6">
+													<label for="kkt_6" role="button"  class="col-xs-12">
+															<span class="p-l-offset flex"><span class="checkbox-style-1"></span></span>
+													</label>
+												</div>
+											</div>
+
+											<div class="flex align-center flex-adaptive clearfix">
+												<div class="col-md-11 p-h-15 m-v-15">
+													<span class="font-w-3">ККТ используется для развозной и (или) разносной торговли (оказания услуг, выполнения работ)</span>
+												</div>
+												<div class="col-md-1 p-h-15 m-v-15">
+													<input type="checkbox" class="hide" id="kkt_7">
+													<label for="kkt_7" role="button"  class="col-xs-12">
+															<span class="p-l-offset flex"><span class="checkbox-style-1"></span></span>
+													</label>
+												</div>
+											</div>
+
+											<div class="flex align-center flex-adaptive clearfix">
+												<div class="col-md-11 p-h-15 m-v-15">
+													<span class="font-w-3">ККТ применяется только при оказании услуг (в случае регистрации автоматизированной системы для бланков строгой отчетности)</span>
+												</div>
+												<div class="col-md-1 p-h-15 m-v-15">
+													<input type="checkbox" class="hide" id="kkt_8">
+													<label for="kkt_8" role="button"  class="col-xs-12">
+															<span class="p-l-offset flex"><span class="checkbox-style-1"></span></span>
+													</label>
+												</div>
+											</div>
+
+											<div class="flex align-center flex-adaptive clearfix">
+												<div class="col-md-11 p-h-15 m-v-15">
+													<span class="font-w-3">ККТ используется при продаже подакцизных товаров</span>
+												</div>
+												<div class="col-md-1 p-h-15 m-v-15">
+													<input type="checkbox" class="hide" id="kkt_9">
+													<label for="kkt_9" role="button"  class="col-xs-12">
+															<span class="p-l-offset flex"><span class="checkbox-style-1"></span></span>
+													</label>
+												</div>
+											</div>
+
+											<div>
+												<div class="col-md-6 p-h-15 m-v-15">
+													<p>ОФД*</p>
+													<select class="js-select search-hide box-xs-10">
+														<option class="">Выбрать</option>
+														<option>sub select 1</option>
+														<option>sub select 2</option>
+														<option>sub select 3</option>
+													</select>
+												</div>
+												<div class="col-md-6 p-h-15 m-v-15 p-t-30 clearfix">
+													<input type="checkbox" name="eds" class="hide" id="ofd">
+													<label for="ofd" role="button"  class="col-xs-12">
+														<div class="flex align-center justify-c-center text-uppercase">
+															<span class=""><b class="line-height">ЕСТЬ ДОГОВОР С ОФД</b></span>
+															<span class="m-l-15 flex"><span class="checkbox-style-1"></span></span>
+														</div>
+													</label>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+								<div class="hr-statement m-v-60"></div>
+
+								<div class="row">
+									<div class="col-md-12 p-h-15 m-v-15">
+										<p>Ф. И. О.*</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: ШАРАПОВ АЛЕКСАНДР СЕРГЕЕВИЧ">
+									</div>
+									<div class="col-md-4 p-h-15 m-v-15">
+										<p>ТЕЛ. ГОРОДСКОЙ</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: +7 (903) 123-65-74">
+									</div>
+									<div class="col-md-4 p-h-15 m-v-15">
+										<p>ТЕЛ. СОТОВЫЙ*</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: +7 (903) 123-65-74">
+									</div>
+									<div class="col-md-4 p-h-15 m-v-15">
+										<p>EMAIL*</p>
+										<input type="text" name="" class="pie-form-control" placeholder="пример: info@sagakkm.ru">
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-6 p-h-15 m-v-15 p-t-30 clearfix">
+										<input type="checkbox" name="eds" class="hide" id="agreement_1">
+										<label for="agreement_1" role="button"  class="col-xs-12">
+											<div class="flex align-center justify-c-center text-uppercase">
+												<span class=""><b class="line-height">ПРАВИЛЬНОСТЬ ВВЕДЕННЫХ ДАННЫХ ПОДТВЕРЖДАЮ</b></span>
+												<span class="m-l-15 flex"><span class="checkbox-style-1"></span></span>
+											</div>
+										</label>
+									</div>
+									<div class="col-md-6 p-h-15 m-v-15 p-t-30 clearfix">
+										<input type="checkbox" name="eds" class="hide" id="agreement_2">
+										<label for="agreement_2" role="button"  class="col-xs-12">
+											<div class="flex align-center justify-c-center text-uppercase">
+												<span class=""><b class="line-height">СОГЛАШЕНИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАНЫХ</b></span>
+												<span class="m-l-15 flex"><span class="checkbox-style-1"></span></span>
+											</div>
+										</label>
+									</div>
+								</div>
+								<div class="btn-content text-center m-v-30 p-t-20">
+									<span class="btn-def reverse">
+										<button type="submit" class="p-h-60 p-v-15">Отправить</button>
+									</span>
+								</div>
 							</form>
 						</div>
 					</div>

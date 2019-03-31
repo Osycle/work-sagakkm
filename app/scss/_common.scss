@@ -1188,7 +1188,7 @@ select.pie-form-control{
 //checkbox
 input[type="checkbox"]:checked{
 	&~.checkbox-style-1, &~label .checkbox-style-1{
-		background-color: $color-1;
+		background-color: $color-3;
 		clip-path: polygon(38% 56%, 100% 0, 70% 41%, 35% 94%, 0 15%);
 	}		
 }

@@ -638,7 +638,16 @@ textarea.form-control{
 	background-position: center;
 	color: black;
 	@media (min-width: 992px) {
-		width: 900px;
+		width: 1000px;
+	}
+	@media (max-width: 991px) {
+		.form-items{
+			text-align: center;
+		}
+		.flex{
+			text-align: center;
+			flex-direction: column;
+		}
 	}
 	h4{
 		color: $color-3;
