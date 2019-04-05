@@ -16,7 +16,16 @@
 	background-position: center;
 	background-repeat: no-repeat;
 }
-
+.icon-phone{
+	width: 16px;
+	height: 19px;
+	background-image: url('../img/icons/phone.png');
+}
+.icon-basket{
+	width: 30px;
+	height: 24px;
+	background-image: url('../img/icons/basket.png');
+}
 
 .hr-linear{
 	hr{
@@ -372,9 +381,7 @@ figcaption{
 }
 //content
 
-.text-shadow-1{
-	text-shadow: 0 2px 1px $color-3;
-}
+
 .gd-h-border{
 	&:before{
 		@extend .clafclear;
@@ -399,6 +406,13 @@ figcaption{
 	figure{
 		position: relative;
 		@extend .gd-h-border;
+	}
+	.btn-opacity{
+		a{
+			min-width: 225px;
+			padding-left: 16px;
+			padding-right: 16px;
+		}
 	}
 }
 .borderstyle-1{
@@ -425,11 +439,18 @@ figcaption{
 		align-items: flex-end;
 		color: white;
 	}
+	.btn-def{
+		box-shadow: 0 2px 2px $color-4;
+		a{
+			font-size: 0.95em;
+		}
+	}
 	h2,h3,h4{
 		margin: 0;
 		font-family: $font-family-3;
 	}
 	h4{
+		text-transform: none;
 		font-size: 1.35em;
 	}
 	.cap-content{
@@ -463,6 +484,9 @@ figcaption{
 		a{
 			font-weight: normal;
 		}
+	}
+	.desc-content{
+		color: $color-4;
 	}
 	.img{
 		background-position: center;
@@ -520,6 +544,7 @@ figcaption{
 	background-color: $color-1;
 	color: white;
 	@extend .text-shadow-1;	
+	font-family: $font-family-5;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -724,6 +749,7 @@ figcaption{
 .price{
 	font-size: 30px;
 	color: $color-3;
+	font-family: $font-family-5;
 }
 .finstorage-time{
 	label{
@@ -1037,5 +1063,13 @@ figcaption{
 			}
 		}
 		
+	}
+	.btn-def{
+		button, a{
+			min-width: 335px;
+			padding-top: 23px;
+			padding-bottom: 23px;	
+			font-size: 14px;
+		}
 	}
 }

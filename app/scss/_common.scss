@@ -7,13 +7,16 @@
 $color-1: #0196C0 !default;
 $color-2: #1BB0D1 !default;//
 $color-3: #1e6790 !default;
-$color-4: #e00579 !default;
+$color-4: #00212f !default;
 $color-5: #65a328 !default;
 $color-special-1: #2e1c11;
 
 $font-family-1: "Helvetica Neue","Helvetica",sans-serif;
 $font-family-2: "Myriad Pro";
 $font-family-3: "Tahoma";
+
+$font-family-4: "Agency FB";
+$font-family-5: "Avanti";
 
 $color-scroll: $color-1;
 $color-footer: #0071BC;
@@ -602,7 +605,7 @@ table {
 .btn-def, .btn-icon{
 	@extend .btn-style;
 	transition: all 0.2s ease;
-	box-shadow: 0 2px 2px $color-3;
+	//box-shadow: 0 2px 2px $color-3;
 	*{
 		color: inherit;
 	}
@@ -617,7 +620,9 @@ table {
 		color: white;
 	}
 	&.reverse{
-		text-shadow: 0 2px 1px $color-3;
+		button{
+			text-shadow: 2px 2px 1px #1f5b84;
+		}
 		&:not([class*="bg-color"]){
 			background-color: $color-1;
 		}
@@ -669,7 +674,9 @@ table {
 	}
 }
 
-
+.text-shadow-1{
+	text-shadow: 0 2px 1px $color-3;
+}
 
 
 
@@ -786,8 +793,8 @@ body{
 	//color: white;
 	//height: auto;
 	background-color: #f4f4f4;
-	//background-image: url('../img/bg/bg-body-article.jpg');
-	background-repeat: repeat-y;
+	background-image: url('../img/bg/bg-body.jpg');
+	background-repeat: no-repeat;
 	background-position: center 0;
   max-width: 1170px;
 }
