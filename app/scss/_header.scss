@@ -335,20 +335,21 @@ ul[class*="sub-menu"]{
 	position: absolute;
 	box-shadow: 0 0 25px -8px black;
 	font-weight: 400;
+	min-width: 225px;
 	transition: 
 							opacity 0.3s ease-in-out,
 							transform 0.3s ease-in-out,
 							pointer-events 0s ease-in-out 0.3s;
 	opacity: 0;
-	font-size: 0.9em;
+	font-size: 15px;
 	z-index: 2;
 	background-color: white;
 	color: #666;
 	padding-left: 15px; 
 	padding-right: 15px; 
-	font-size: 1em;
 	a{
 		border-bottom: 1px solid #e8e8e8;
+		display: inline-block;
 		&:before, &:after{
 			display: none;
 		}
@@ -360,7 +361,7 @@ ul[class*="sub-menu"]{
 .sub-menu-1{
 	white-space: normal;
 	text-transform: none;
-	transform: matrix(1,0,0,1,0,-5);
+	transform: matrix(1,0,0,1,0,5);
 	transform-origin: 40% 0;
 	text-align: left;
 	color: #333;
@@ -373,7 +374,7 @@ ul[class*="sub-menu"]{
 		//min-width: 250px;
 		width: 100%;
 		a{
-			padding: 10px 15px;
+			padding: 17px 15px;
 			display: block;
 			position: relative;
 			z-index: 1;

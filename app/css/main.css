@@ -8548,21 +8548,22 @@ ul[class*="sub-menu"] {
   -webkit-box-shadow: 0 0 25px -8px black;
   box-shadow: 0 0 25px -8px black;
   font-weight: 400;
+  min-width: 225px;
   -webkit-transition: opacity 0.3s ease-in-out, pointer-events 0s ease-in-out 0.3s, -webkit-transform 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out, pointer-events 0s ease-in-out 0.3s, -webkit-transform 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, pointer-events 0s ease-in-out 0.3s;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, pointer-events 0s ease-in-out 0.3s;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, pointer-events 0s ease-in-out 0.3s, -webkit-transform 0.3s ease-in-out;
   opacity: 0;
-  font-size: 0.9em;
+  font-size: 15px;
   z-index: 2;
   background-color: white;
   color: #666;
   padding-left: 15px;
-  padding-right: 15px;
-  font-size: 1em; }
+  padding-right: 15px; }
   ul[class*="sub-menu"] a {
-    border-bottom: 1px solid #e8e8e8; }
+    border-bottom: 1px solid #e8e8e8;
+    display: inline-block; }
     ul[class*="sub-menu"] a:before, ul[class*="sub-menu"] a:after {
       display: none; }
   ul[class*="sub-menu"] li {
@@ -8571,9 +8572,9 @@ ul[class*="sub-menu"] {
 .sub-menu-1 {
   white-space: normal;
   text-transform: none;
-  -webkit-transform: matrix(1, 0, 0, 1, 0, -5);
-  -ms-transform: matrix(1, 0, 0, 1, 0, -5);
-  transform: matrix(1, 0, 0, 1, 0, -5);
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 5);
+  -ms-transform: matrix(1, 0, 0, 1, 0, 5);
+  transform: matrix(1, 0, 0, 1, 0, 5);
   -webkit-transform-origin: 40% 0;
   -ms-transform-origin: 40% 0;
   transform-origin: 40% 0;
@@ -8588,7 +8589,7 @@ ul[class*="sub-menu"] {
     width: max-content;
     width: 100%; }
     .sub-menu-1 li a {
-      padding: 10px 15px;
+      padding: 17px 15px;
       display: block;
       position: relative;
       z-index: 1; }
