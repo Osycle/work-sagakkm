@@ -70,6 +70,7 @@ $header-min-menu: 70px;
 	background-color: $color-1;
 	height: $header-top-height;
 	border-bottom: 5px solid $color-3;
+	padding-top: 2px;
 	//overflow: hidden;
 	&.align-i-center{
 		flex-wrap: nowrap;

@@ -474,6 +474,11 @@ figcaption{
 
 //short-specialoffer
 .short-specialoffer-items{
+	text-align: left;
+	.cap-content{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 	.img-content{
 		position: relative;
 		overflow: hidden;
@@ -509,6 +514,7 @@ figcaption{
 	figure, .boxes-cell{
 		border: 1px solid $color-1;
 		font-size: em(18, 14);
+		text-align: center;
 		box-shadow: 0 0 5px rgba(black, 0.5);
 		&:hover{
 			.img{
@@ -649,8 +655,9 @@ figcaption{
 .carousel-nav{
   width: 110px;
   margin-left: 10px;
-  max-height: 262px;
-  overflow-y: scroll;
+  max-height: 172px;
+  overflow-y: hidden;
+  margin-top: 45px;
   .img{
   	border: 1px solid $color-1;
   	background-position: center;
@@ -735,6 +742,28 @@ figcaption{
 	}
 	@media (min-width: 992px) {
 		width: 260px;
+		.flickity-prev-next-button{
+			z-index: 25;
+			right: -111px;
+			left: auto;
+			border-radius: 0;
+			width: 90px;
+			height: 25px;
+			background-color: #ebebeb;
+			&.next{
+				top: auto;
+				bottom: 0px;
+			}
+			&.previous{
+				top: 24px;	
+			}
+			svg{
+				transform: rotate(90deg);
+				.arrow{
+					fill: $color-1;
+				}
+			}
+		}
 	}
 }
 

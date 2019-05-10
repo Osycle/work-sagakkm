@@ -8281,7 +8281,8 @@ label {
 .header-top-content {
   background-color: #0196C0;
   height: 50px;
-  border-bottom: 5px solid #1e6790; }
+  border-bottom: 5px solid #1e6790;
+  padding-top: 2px; }
   .header-top-content.align-i-center {
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
@@ -9305,73 +9306,74 @@ figcaption {
     -ms-transform: scale(1.1) rotate(4deg);
     transform: scale(1.1) rotate(4deg); }
 
-.short-specialoffer-items .img-content {
-  position: relative;
-  overflow: hidden;
-  -webkit-perspective-origin: 0 50%;
-  perspective-origin: 0 50%;
-  -webkit-perspective: 1500px;
-  perspective: 1500px; }
-
-.short-specialoffer-items .btn-def a {
-  font-weight: normal; }
-
-.short-specialoffer-items .desc-content {
-  color: #00212f; }
-
-.short-specialoffer-items .img {
-  background-position: center;
-  -webkit-background-size: contain;
-  background-size: contain;
-  height: 200px;
-  -webkit-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center; }
-  .short-specialoffer-items .img:not(.second) {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1); }
-  .short-specialoffer-items .img.second {
-    width: 100%;
-    top: 0;
-    left: 0;
-    -webkit-transform: scale(0);
-    -ms-transform: scale(0);
-    transform: scale(0);
-    position: absolute;
-    opacity: 0.5; }
-
-.short-specialoffer-items figure, .short-specialoffer-items .boxes-cell {
-  border: 1px solid #0196C0;
-  font-size: 1.28571em;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
-  .short-specialoffer-items figure:hover .img:not(.second), .short-specialoffer-items .boxes-cell:hover .img:not(.second) {
-    -webkit-transform: scale(0);
-    -ms-transform: scale(0);
-    transform: scale(0);
-    opacity: 0; }
-  .short-specialoffer-items figure:hover .img.second, .short-specialoffer-items .boxes-cell:hover .img.second {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; }
-
-@media (min-width: 992px) {
-  .short-specialoffer-items .cell-hover {
-    background-color: transparent;
-    top: -10px; }
-    .short-specialoffer-items .cell-hover .btn-def {
-      color: white;
-      -webkit-box-shadow: none;
-      box-shadow: none; }
-      .short-specialoffer-items .cell-hover .btn-def, .short-specialoffer-items .cell-hover .btn-def:hover {
-        background-color: rgba(1, 150, 192, 0.8); }
-      .short-specialoffer-items .cell-hover .btn-def a {
-        text-shadow: none; } }
+.short-specialoffer-items {
+  text-align: left; }
+  .short-specialoffer-items .cap-content {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .short-specialoffer-items .img-content {
+    position: relative;
+    overflow: hidden;
+    -webkit-perspective-origin: 0 50%;
+    perspective-origin: 0 50%;
+    -webkit-perspective: 1500px;
+    perspective: 1500px; }
+  .short-specialoffer-items .btn-def a {
+    font-weight: normal; }
+  .short-specialoffer-items .desc-content {
+    color: #00212f; }
+  .short-specialoffer-items .img {
+    background-position: center;
+    -webkit-background-size: contain;
+    background-size: contain;
+    height: 200px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center; }
+    .short-specialoffer-items .img:not(.second) {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1); }
+    .short-specialoffer-items .img.second {
+      width: 100%;
+      top: 0;
+      left: 0;
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0);
+      position: absolute;
+      opacity: 0.5; }
+  .short-specialoffer-items figure, .short-specialoffer-items .boxes-cell {
+    border: 1px solid #0196C0;
+    font-size: 1.28571em;
+    text-align: center;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
+    .short-specialoffer-items figure:hover .img:not(.second), .short-specialoffer-items .boxes-cell:hover .img:not(.second) {
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0);
+      opacity: 0; }
+    .short-specialoffer-items figure:hover .img.second, .short-specialoffer-items .boxes-cell:hover .img.second {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      opacity: 1; }
+  @media (min-width: 992px) {
+    .short-specialoffer-items .cell-hover {
+      background-color: transparent;
+      top: -10px; }
+      .short-specialoffer-items .cell-hover .btn-def {
+        color: white;
+        -webkit-box-shadow: none;
+        box-shadow: none; }
+        .short-specialoffer-items .cell-hover .btn-def, .short-specialoffer-items .cell-hover .btn-def:hover {
+          background-color: rgba(1, 150, 192, 0.8); }
+        .short-specialoffer-items .cell-hover .btn-def a {
+          text-shadow: none; } }
 
 .btn-inbasket {
   background-color: #0196C0;
@@ -9463,8 +9465,9 @@ figcaption {
 .carousel-nav {
   width: 110px;
   margin-left: 10px;
-  max-height: 262px;
-  overflow-y: scroll; }
+  max-height: 172px;
+  overflow-y: hidden;
+  margin-top: 45px; }
   .carousel-nav .img {
     border: 1px solid #0196C0;
     background-position: center;
@@ -9536,7 +9539,27 @@ figcaption {
       display: block; }
   @media (min-width: 992px) {
     .production-carousel {
-      width: 260px; } }
+      width: 260px; }
+      .production-carousel .flickity-prev-next-button {
+        z-index: 25;
+        right: -111px;
+        left: auto;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        width: 90px;
+        height: 25px;
+        background-color: #ebebeb; }
+        .production-carousel .flickity-prev-next-button.next {
+          top: auto;
+          bottom: 0px; }
+        .production-carousel .flickity-prev-next-button.previous {
+          top: 24px; }
+        .production-carousel .flickity-prev-next-button svg {
+          -webkit-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          transform: rotate(90deg); }
+          .production-carousel .flickity-prev-next-button svg .arrow {
+            fill: #0196C0; } }
 
 .finstorage-prices .price {
   display: none; }

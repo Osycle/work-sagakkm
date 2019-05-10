@@ -196,11 +196,11 @@
 				imagesLoaded: true,
 				//autoPlay: 6000,
 				pauseAutoPlayOnHover: true,
-				arrowShape: "M 10,50 L 75,100 L 70,90 L 30,50  L 70,10 L 75,0 Z",
+				arrowShape: "M 25,50 L 60,80 L 60,50 L 30,50  L 60,50 L 60,20 Z",
 				initialIndex: 0,
 				friction: 1,
 				selectedAttraction: 1,
-				prevNextButtons: checkSm(),
+				prevNextButtons: true,
 				draggable: false,
 				wrapAround: true,
 				pageDots: false,
@@ -234,7 +234,7 @@
 			    .addClass('is-nav-selected');
 			  // scroll nav
 			  var scrollY = $selected.position().top +
-			    $carouselNav.scrollTop() - ( navHeight + navCellHeight ) / 3.77;
+			    $carouselNav.scrollTop() - ( navHeight + navCellHeight ) / 1.79; //3.77
 			  $carouselNav.animate({
 			    scrollTop: scrollY
 			  });
