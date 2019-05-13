@@ -536,6 +536,10 @@ figcaption{
 		}
 	}
 	@media (min-width: 992px) {
+		figure, .boxes-cell{
+			max-height: 363px;
+			overflow: hidden;
+		}
 		.cell-hover{
 			background-color: transparent;
 			top: -10px;

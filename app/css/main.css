@@ -9368,6 +9368,9 @@ figcaption {
       transform: scale(1);
       opacity: 1; }
   @media (min-width: 992px) {
+    .short-specialoffer-items figure, .short-specialoffer-items .boxes-cell {
+      max-height: 363px;
+      overflow: hidden; }
     .short-specialoffer-items .cell-hover {
       background-color: transparent;
       top: -10px; }
