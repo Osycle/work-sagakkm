@@ -478,6 +478,10 @@ figcaption{
 	.cap-content{
 		padding-left: 15px;
 		padding-right: 15px;
+		min-height: 52px;
+		//align-items: center;
+		//display: flex;
+		//justify-content: center;
 	}
 	.img-content{
 		position: relative;
@@ -496,7 +500,7 @@ figcaption{
 	.img{
 		background-position: center;
 		background-size: contain;
-		height: 200px;
+		height: 190px;
 		transition: all 0.5s ease-in-out;
 		transform-origin: center;
 		&:not(.second){
