@@ -478,10 +478,12 @@ figcaption{
 	.cap-content{
 		padding-left: 15px;
 		padding-right: 15px;
-		min-height: 52px;
-		//align-items: center;
-		//display: flex;
-		//justify-content: center;
+    @media (min-width: 992px) {
+	    height: 52px;
+	    position: relative;
+	    z-index: 1;
+
+    }
 	}
 	.img-content{
 		position: relative;
