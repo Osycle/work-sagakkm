@@ -475,6 +475,9 @@ figcaption{
 //short-specialoffer
 .short-specialoffer-items{
 	text-align: left;
+	.owl-nav{
+		position: relative;
+	}
 	.cap-content{
 		padding-left: 15px;
 		padding-right: 15px;

@@ -458,7 +458,13 @@ table {
 
 
 
-
+[class*='boxes-'].owl-carousel {
+  margin-left: 0;
+  margin-right: 0; }
+  [class*='boxes-'].owl-carousel figure, [class*='boxes-'].owl-carousel .boxes-cell {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0; }
 
 
 .cell-hover{

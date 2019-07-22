@@ -7614,6 +7614,15 @@ table {
       float: left;
       width: 100/1%; } }
 
+[class*='boxes-'].owl-carousel {
+  margin-left: 0;
+  margin-right: 0; }
+
+[class*='boxes-'].owl-carousel figure, [class*='boxes-'].owl-carousel .boxes-cell {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0; }
+
 .cell-hover {
   opacity: 0;
   padding: 0 5%;
@@ -9308,6 +9317,8 @@ figcaption {
 
 .short-specialoffer-items {
   text-align: left; }
+  .short-specialoffer-items .owl-nav {
+    position: relative; }
   .short-specialoffer-items .cap-content {
     padding-left: 15px;
     padding-right: 15px; }
