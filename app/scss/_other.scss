@@ -326,10 +326,10 @@ html{
 		margin-bottom: 10px;
 		padding: 2px 5px;
 		.carousel-cell{
-	  	width: 30%;
+	  	width: 40%;
 			height: auto;
 	  	//margin-right: 10px;
-	  	border: 2px solid transparent;
+	  	border: 1px solid $color-1;
 	  	transition: all 0.3s ease-out ;
 	  	.img-content{
 	  		transition: all 0.3s ease-out;
@@ -340,7 +340,7 @@ html{
 	  	}
 		}
 		.is-selected{
-			border-color: rgba($color-3, 1);
+			border-color: rgba($color-2, 1);
 			.img-content{
 				transform: inherit;
 			}

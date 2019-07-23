@@ -192,7 +192,7 @@
 
 		//flickity vertical carousel
 		// external js: flickity.pkgd.js
-		var $carousel = $('.production-carousel').flickity({
+/*		var $carousel = $('.production-carousel').flickity({
 				imagesLoaded: true,
 				//autoPlay: 6000,
 				pauseAutoPlayOnHover: true,
@@ -239,10 +239,56 @@
 			    scrollTop: scrollY
 			  });
 			});
-		}
+		}*/
 	    
 
+		window.carouselArticle = function() {
+			if ($(".carousel-article").length >= 0) {
+				var carouselMain = $(".carousel-article .carousel-main"),
+					carouselNav = $(".carousel-article .carousel-nav");
 
+				for (var i = 0; i < carouselMain.length; i++) {
+					var crs = $(carouselMain)
+						.eq(i)
+						.flickity({
+							imagesLoaded: true,
+							prevNextButtons: true,
+							cellAlign: "center",
+							arrowShape: "M 25,50 L 60,80 L 60,50 L 30,50  L 60,50 L 60,20 Z",
+							bgLazyLoad: 1,
+							//friction: 1,
+							//selectedAttraction: 1,
+							initialIndex: 1,
+							draggable: false,
+							contain: true,
+							pageDots: false
+						});
+					var flkty = crs.data("flickity");
+
+					$(carouselNav).eq(i).flickity({
+						imagesLoaded: true,
+						initialIndex: 1,
+						asNavFor: $(carouselMain)[i],
+						prevNextButtons: false,
+						draggable: true,
+						percentPosition: false,
+						//wrapAround: true,
+						cellAlign: "center",
+						adaptiveHeight: false,
+						contain: false,
+						pageDots: false
+					});
+          $("[data-fancybox]").fancybox({
+            afterShow: function(instance, current) {
+              this.$content.find(".carousel-main").flickity("resize");
+              this.$content.find(".carousel-nav").flickity("resize");
+            }
+          });
+				}
+			}
+		};
+		carouselArticle();
+		
 
 
     
@@ -366,7 +412,7 @@
         //console.log(this, e);
       } )
     };
-    //counterAddRem();
+    counterAddRem(".finstorage");
 
 
 
