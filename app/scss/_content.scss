@@ -355,7 +355,7 @@ figcaption{
   position: relative;
   form{
     .search-input{
-      width: 200px;
+      width: 140px;
       height: 36px;
       margin-left: auto;
     }
@@ -478,6 +478,18 @@ figcaption{
 	.owl-nav{
 		position: relative;
 	}
+	b:not(.old-price){
+		display: block;
+	}
+	.old-price{
+		position: relative;
+		&:before{
+			@extend .clafclear;
+			height: 2px;
+			margin-top: 12px;
+			background-color: red;
+		}
+	}
 	.cap-content{
 		padding-left: 15px;
 		padding-right: 15px;
@@ -505,7 +517,7 @@ figcaption{
 	.img{
 		background-position: center;
 		background-size: contain;
-		height: 190px;
+		height: 160px;
 		transition: all 0.5s ease-in-out;
 		transform-origin: center;
 		&:not(.second){

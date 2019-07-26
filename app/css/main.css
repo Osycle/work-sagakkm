@@ -7348,7 +7348,7 @@ table {
 .claf, [data-flicker]:before, .h-style-1:after, .h-style-1:before, .checkbox-style-1:before {
   content: " "; }
 
-.clafclear, .h1-style:not(.before-not):before, .form-def .cap-content:before, .gd-h-border:before, .short-services-items figure:before, .contacts-info-items figure:before, .steps-items figure:before, #footer:before {
+.clafclear, .h1-style:not(.before-not):before, .form-def .cap-content:before, .gd-h-border:before, .short-services-items figure:before, .contacts-info-items figure:before, .short-specialoffer-items .old-price:before, .steps-items figure:before, #footer:before {
   content: " ";
   height: 100%;
   width: 100%;
@@ -8255,10 +8255,24 @@ label {
   #header h4 {
     margin-top: 5px;
     margin-bottom: 5px; }
+  #header.fixeder {
+    position: fixed; }
+    #header.fixeder .header-top, #header.fixeder .header-middle {
+      display: none; }
+    #header.fixeder .menu ul:not([class*="sub-menu"]) > li:first-child {
+      -webkit-border-radius: 0 0 0 10px;
+      border-radius: 0 0 0 10px; }
+    #header.fixeder .menu ul:not([class*="sub-menu"]) > li:last-child {
+      -webkit-border-radius: 0 0 10px 0;
+      border-radius: 0 0 10px 0; }
 
 @media (max-width: 991px) {
   .header-hidden {
     height: 70px; } }
+
+.header-hidden.fixeder {
+  position: relative;
+  height: 205px; }
 
 .bnr-article {
   background-position: center;
@@ -8386,6 +8400,18 @@ label {
     display: none; }
   .header-scroll.scrolled .header-bottom .align-i-center, .header-scroll.header-pages .header-bottom .align-i-center {
     top: 30px; }
+
+.header-info {
+  width: 700px;
+  padding-top: 10px;
+  font-size: 0.95em;
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
+  .header-info .color-2.m-l-40 {
+    position: absolute;
+    top: -10px; }
 
 .phone-info .fa {
   font-size: 25px; }
@@ -9204,7 +9230,7 @@ figcaption {
 .search-nav-content {
   position: relative; }
   .search-nav-content form .search-input {
-    width: 200px;
+    width: 140px;
     height: 36px;
     margin-left: auto; }
   .search-nav-content input {
@@ -9319,6 +9345,14 @@ figcaption {
   text-align: left; }
   .short-specialoffer-items .owl-nav {
     position: relative; }
+  .short-specialoffer-items b:not(.old-price) {
+    display: block; }
+  .short-specialoffer-items .old-price {
+    position: relative; }
+    .short-specialoffer-items .old-price:before {
+      height: 2px;
+      margin-top: 12px;
+      background-color: red; }
   .short-specialoffer-items .cap-content {
     padding-left: 15px;
     padding-right: 15px; }
@@ -9342,7 +9376,7 @@ figcaption {
     background-position: center;
     -webkit-background-size: contain;
     background-size: contain;
-    height: 190px;
+    height: 160px;
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;

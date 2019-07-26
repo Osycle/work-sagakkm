@@ -315,6 +315,10 @@
 		var minMenu = $(".header-scroll") || null;
 		var headerRange = false;
 		var staffProgressStatus = false;
+		var headerBottom = $(".header-bottom");
+		var headerHidden = $(".header-hidden");
+		var header = $("#header");
+		var headerBottomPos = (headerBottom.offset().top);
 		$(window).on("scroll", function(e) {
 
 			//Адаптация хедера при скролинге
@@ -326,7 +330,19 @@
 			} else if ($(window).scrollTop() < 100 && headerRange == true) {
 				headerRange = !true;
 				if (minMenu) minMenu.removeClass("scrolled");
-			} //.originalEvent.wheelDelta
+			}
+
+
+
+				if( headerBottomPos <= $(window).scrollTop()){
+					header.addClass("fixeder");
+					headerHidden.addClass("fixeder");
+					console.log(headerBottom.offset().top, $(window).scrollTop());
+				}else{
+					header.removeClass("fixeder");
+					headerHidden.removeClass("fixeder");
+				}
+
 
 		});
 		$(window).trigger("scroll");

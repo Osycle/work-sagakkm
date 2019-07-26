@@ -32,10 +32,26 @@ $header-min-menu: 70px;
 		margin-top: 5px;
 		margin-bottom: 5px;
 	}
+	&.fixeder{
+		position: fixed;
+		.header-top, .header-middle{
+			display: none;
+		}
+		.menu ul:not([class*="sub-menu"]) > li:first-child{
+			border-radius: 0 0 0 10px;
+		}
+		.menu ul:not([class*="sub-menu"]) > li:last-child{
+			border-radius: 0 0 10px 0;
+		}
+	}
 }
 .header-hidden{
 	@media (max-width: 991px) {
 		height: 70px;
+	}
+	&.fixeder{
+		position: relative;
+		height: 205px;
 	}
 }
 .bnr-article{
@@ -166,7 +182,16 @@ $header-min-menu: 70px;
 	}
 }
 
-
+.header-info{
+	width: 700px;
+  padding-top: 10px;
+  font-size: 0.95em;
+	display: flex !important;
+	.color-2.m-l-40{
+    position: absolute;
+    top: -10px;
+	}
+}
 .phone-info{
 	.fa{
 		font-size: 25px;
