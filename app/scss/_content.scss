@@ -733,16 +733,13 @@ figcaption{
 				&:nth-child(1){
 
 				}
-				width: 100px;
-				margin-right: 10px;
-				margin-left: 10px;
-				.img{
-					height: 280px;
-					background-position: center;
-					background-size: cover;
-				}
+				width: 70px;
+				margin-right: 3px;
+				margin-left: 3px;
 		  	.img{
-		  		height: 80px;
+					background-size: cover;
+					background-position: center;
+		  		height: 65px;
 		  	}
 			}
 		}
@@ -789,10 +786,10 @@ figcaption{
 			right: 0;
 			left: auto;
 			border-radius: 0;
-			height: 82px;
+			height: 67px;
 			width: 25px;
-			background-color: #ebebeb;
-			bottom: -136px;
+			background-color: transparent;
+			bottom: -114px;
 			&.next{
 				top: auto;
 			}
