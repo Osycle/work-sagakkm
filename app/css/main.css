@@ -8267,6 +8267,7 @@ label {
       border-radius: 0 0 10px 0; }
     #header.fixeder .basket-fixeder {
       position: absolute;
+      display: block;
       right: 30px;
       top: 50px;
       background-color: #1f5781;
@@ -8279,6 +8280,9 @@ label {
       #header.fixeder .basket-fixeder .minibasket-icon {
         -webkit-filter: brightness(0) invert(1);
         filter: brightness(0) invert(1); }
+
+.basket-fixeder {
+  display: none; }
 
 @media (max-width: 991px) {
   .header-hidden {
