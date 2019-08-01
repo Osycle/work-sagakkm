@@ -596,8 +596,8 @@ div.owl-nav{
 	display: inline-block;
 	border-radius: 0;
 	border: 1px solid $color-1;
-	display: flex;
-	align-items: center;
+	//display: flex;
+	//align-items: center;
 	&:hover, &:focus{
 		opacity: 1;
 		background-color: $color-1;
@@ -615,8 +615,8 @@ div.owl-nav{
 		//display: inline-block;
 	}
 	.arrow{
-		transform: scale(0.08);
-    transform-origin: 32% 32%;
+		//transform: scale(0.08);
+    //transform-origin: 32% 32%;
 	}
 	&.next{
 		svg{
